@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+}
+
+.container .filters{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .mainContent{
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+}
