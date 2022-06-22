@@ -45,12 +45,12 @@ export default function Home() {
             imageAlt='grades-svg'
           />
           <MobileCard
-            heading='Curated course videos'
-            cardText1='The friend who teaches you the night before the exam. Now one step closer to you, on demand.'
-            cardText2='Our content goes through various quality checks to ensure content integretity and authenticity before the final upload. You can rest assured with ninepointer guarantee.'
+            heading='Solved Question Papers'
+            cardText1='All your exam worries sorted with solved papers and detailed analysis'
+            cardText2='No more scouring for hours on the internet looking for solved question papers. Better utilize that time clearing important concepts and developing a deep understanding by going through our step by step solutions backed by the ninepointer guarantee.'
             actionText='Explore'
-            actionLink='https://www.youtube.com/channel/UCgslF4zuDhDyttD9P3ZOHbg'
-            imageSource='assets/svg-assets/undraw_video_files_fu10.svg'
+            actionLink='https://linktr.ee/ninepointer'
+            imageSource='assets/svg-assets/undraw_text_files_au1q.svg'
             imageAlt='grades-svg'
           />
         </div>
