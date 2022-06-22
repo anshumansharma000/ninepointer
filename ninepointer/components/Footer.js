@@ -72,6 +72,13 @@
 
 import footerStyles from '../styles/Footer.module.css';
 import Link from 'next/link';
+import {
+  FaWhatsapp,
+  FaInstagram,
+  FaTelegramPlane,
+  FaYoutube,
+  FaFacebookF,
+} from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -129,10 +136,47 @@ const Footer = () => {
           <h3>Contact Us</h3>
           <div>
             <ul>
-              <li>+91-9999999999</li>
+              <li>+91-7737384957</li>
               <li>hello@ninepointer.com</li>
               <li>Jaipur, Rajasthan</li>
             </ul>
+            <div className={footerStyles.socialLinks}>
+              <a
+                href='https://www.youtube.com/channel/UCgslF4zuDhDyttD9P3ZOHbg/featured'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <FaYoutube size={21} />
+              </a>
+              <a
+                href='https://instagram.com/nine_pointer'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <FaInstagram size={21} />
+              </a>
+              <a
+                href='https://t.me/nine_pointer'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <FaTelegramPlane size={21} />
+              </a>
+              <a
+                href='https://api.whatsapp.com/send?phone=917737384957'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <FaWhatsapp size={21} />
+              </a>
+              <a
+                href='https://www.facebook.com/ninepointer-116326074391387'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <FaFacebookF size={21} />
+              </a>
+            </div>
           </div>
         </div>
       </div>

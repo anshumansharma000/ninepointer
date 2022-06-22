@@ -138,6 +138,12 @@
     /* margin-left: 60px; */
 }
 
+.container .top .contact .socialLinks{
+    margin-top: 2rem;
+    display: flex;
+    gap: 0.8rem;
+}
+
 .container .top .logo{
     display: flex;
     flex-direction: column;
@@ -185,6 +191,12 @@
 
     .container .top .website{
         display: none;
+    }
+
+    .container .top .contact .socialLinks{
+        margin-top: 1rem;
+        display: flex;
+        gap: 0.6rem;
     }
 
     .container .top .links{
