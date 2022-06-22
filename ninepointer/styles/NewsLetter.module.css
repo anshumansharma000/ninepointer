@@ -7,8 +7,8 @@
     margin-left: auto;
     margin-right: auto;
     box-shadow: -2px -5px 32px 11px rgba(0,0,0,0.37);
--webkit-box-shadow: -2px -5px 32px 11px rgba(0,0,0,0.37);
--moz-box-shadow: -2px -5px 32px 11px rgba(0,0,0,0.37);
+    -webkit-box-shadow: -2px -5px 32px 11px rgba(0,0,0,0.37);
+    -moz-box-shadow: -2px -5px 32px 11px rgba(0,0,0,0.37);
     /* margin: auto; */
 }
 
@@ -36,4 +36,24 @@
     border: none;
     border-radius: 1rem;
     font-size: 1rem;
+}
+
+
+@media (max-width:600px) {
+    .container{
+        width: 100%;
+    }
+
+    .container input{
+        font-size: 1rem;
+    }
+
+    .container .action{
+        display: flex;
+        flex-direction: column;
+    }
+    .container button{
+        margin-top: 1rem;
+        padding: 1rem;
+    }
 }

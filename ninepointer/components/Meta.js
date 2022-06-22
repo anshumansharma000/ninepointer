@@ -29,11 +29,11 @@ const Meta = ({ title, keywords, description }) => {
 };
 
 Meta.defaultProps = {
-  title: 'ninepointer Learn from ninepointers from India’s top colleges ',
+  title: 'ninepointer-Learn from ninepointers from India’s top colleges ',
   keywords:
     "b.tech, engineering, mbbs, medical, syllabus, bachelor's, btech, be,",
   description:
-    ' Ninepointer helps you get better grades in exams! The content on the website is uploaded and updated by undergrad students with a deep insight in a particular subject. It undergoes various quality checks and is updated on our website after approval.',
+    ' ninepointer helps you get better grades in exams! The content on the website is uploaded and updated by undergrad students with a deep insight in a particular subject. It undergoes various quality checks and is updated on our website after approval.',
 };
 
 export default Meta;

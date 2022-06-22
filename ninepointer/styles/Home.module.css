@@ -3,8 +3,13 @@
     font-family: 'Nunito', sans-serif;
 }
 
+
+.container .mobileCards{
+    display: none;
+}
+
 .community{
-    padding: 2rem;
+    /* padding: 2rem; */
     display: flex;
     gap: 2rem;
     margin-bottom: 3rem;
@@ -59,7 +64,32 @@
 
 @media (max-width:600px) {
     .container .bigCards{
+        display: none;
+    }
+
+    .container .mobileCards{
         display: flex;
         flex-direction: column;
+    }
+
+    .container .community{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container .community .left{
+        width: 100%;
+    }
+
+    .container .community .left img{
+        width: 100%;
+    }
+
+    .container .community .left{
+        display: none;
+    }
+
+    .community .right .numberCards{
+        gap: 1rem;
     }
 }
