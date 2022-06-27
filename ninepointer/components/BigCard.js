@@ -25,7 +25,9 @@ const BigCard = ({
         <p style={{ color: 'grey', fontWeight: '700' }}>{cardText1}</p>
         <p>{cardText2}</p>
         <button className={styles.actionButton}>
-          <a href={actionLink}>{actionText}</a>
+          <a href={actionLink} target='_blank' rel='noopener noreferrer'>
+            {actionText}
+          </a>
         </button>
       </div>
       <div
@@ -56,7 +58,9 @@ const BigCard = ({
         <p style={{ color: 'grey', fontWeight: '700' }}>{cardText1}</p>
         <p>{cardText2}</p>
         <button className={styles.actionButton}>
-          <a href={actionLink}>{actionText}</a>
+          <a href={actionLink} target='_blank' rel='noopener noreferrer'>
+            {actionText}
+          </a>
         </button>
       </div>
     </div>

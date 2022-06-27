@@ -1,0 +1,90 @@
+.container{
+
+    .motto{
+        padding: 2rem 5rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .mottoText{
+        width: 60%;
+    }
+
+    .image{
+        width: 25%;
+
+        img{
+            width: 100%;
+        }
+    }
+
+    .whatWeDo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+        padding-top: 2rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+        text-align: center;
+        .featureCards{
+            margin-top: 2rem;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+    }
+
+
+    .meetTheTeam{
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .team{
+            display: flex;
+            gap: 4rem;
+        }
+    }
+}
+
+
+@media (max-width:600px) {
+    .container{
+        h1{
+            font-size: 1.5rem;
+        }
+        p{
+            font-size: 0.9rem;
+        }
+        .motto{
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+
+            .image{
+                display: none;
+                width: 100%;
+            }
+        }
+
+        .mottoText{
+            width: 100%;
+        }
+
+        .whatWeDo{
+            padding: 0;
+        }
+
+        .meetTheTeam{
+            .team{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    
+    }
+}

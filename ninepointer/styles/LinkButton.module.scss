@@ -1,0 +1,22 @@
+.container{
+    margin-bottom: 2rem;
+    width: 200px;
+    button{
+        cursor: pointer;
+        height: 60px;
+        width: 200px;
+        color: white;
+        padding: 0.5rem;
+        border: none;
+        border-radius: 0.5rem;
+    }
+}
+
+@media (max-width:600px) {
+    .container{
+        width: 140px;
+        button{
+            width: 140px;
+        }
+    }   
+}

@@ -2,10 +2,12 @@ import navStyles from '../styles/Navbar.module.css';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { FaStream } from 'react-icons/fa';
+import Dropdown from './Dropdown';
 
 export const Navbar = () => {
   const [active, setActive] = useState(false);
   const [showExtended, setShowExtended] = useState(false);
+  // const [dropdown, setDropdown] = useState(false);
 
   const changeNavbarBackground = () => {
     if (window.scrollY > 60) {
@@ -48,9 +50,16 @@ export const Navbar = () => {
             <Link href='/'>Home</Link>
           </li>
           <li>
-            <Link href='/partner-program'>Become a partner</Link>
+            <Link href='/create'>Create with us</Link>
           </li>
-          <li>
+          <li
+          // onMouseEnter={() => {
+          //   setDropdown(true);
+          // }}
+          // onMouseLeave={() => {
+          //   setDropdown(false);
+          // }}
+          >
             <Link href='/content'>Browse content</Link>
           </li>
           <li>
@@ -64,6 +73,7 @@ export const Navbar = () => {
         </ul>
         {/* <NavbarItem />
       <NavbarItem /> */}
+        {/* <Dropdown /> */}
       </div>
       {showExtended && (
         <div className={navStyles.navItems}>
@@ -75,7 +85,7 @@ export const Navbar = () => {
               <Link href='/about'>About Us</Link>
             </li>
             <li>
-              <Link href='/blog'>Blog</Link>
+              <Link href='/create'>Create with us</Link>
             </li>
             <li>
               <Link href='/contact'>Contact Us</Link>
@@ -83,6 +93,7 @@ export const Navbar = () => {
           </ul>
         </div>
       )}
+      {/* {dropdown && <Dropdown />} */}
     </div>
   );
 };

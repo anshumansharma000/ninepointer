@@ -13,7 +13,7 @@ export default function Home() {
         <div className={styles.bigCards}>
           <BigCard
             leftText={false}
-            heading='Curated course videos'
+            heading='Topic specific course videos'
             cardText1='The friend who teaches you the night before the exam. Now one step closer to you, on demand.'
             cardText2='Our content goes through various quality checks to ensure content integretity and authenticity before the final upload. You can rest assured with ninepointer guarantee.'
             actionText='Explore'
@@ -24,11 +24,11 @@ export default function Home() {
           />
           <BigCard
             leftText={true}
-            heading='Solved Question Papers'
+            heading='Previous Year Questions and solutions'
             cardText1='All your exam worries sorted with solved papers and detailed analysis'
             cardText2='No more scouring for hours on the internet looking for solved question papers. Better utilize that time clearing important concepts and developing a deep understanding by going through our step by step solutions backed by the ninepointer guarantee.'
             actionText='Explore'
-            actionLink='https://linktr.ee/ninepointer'
+            actionLink='https://www.youtube.com/channel/UCgslF4zuDhDyttD9P3ZOHbg/playlists'
             imageSource='assets/svg-assets/undraw_text_files_au1q.svg'
             imageAlt='grades-svg'
             textAnimation='fade-left'
@@ -36,7 +36,7 @@ export default function Home() {
         </div>
         <div className={styles.mobileCards}>
           <MobileCard
-            heading='Curated course videos'
+            heading='Topic specific course videos'
             cardText1='The friend who teaches you the night before the exam. Now one step closer to you, on demand.'
             cardText2='Our content goes through various quality checks to ensure content integretity and authenticity before the final upload. You can rest assured with ninepointer guarantee.'
             actionText='Explore'
@@ -45,11 +45,11 @@ export default function Home() {
             imageAlt='grades-svg'
           />
           <MobileCard
-            heading='Solved Question Papers'
+            heading='Previous Year Questions and Solutions'
             cardText1='All your exam worries sorted with solved papers and detailed analysis'
             cardText2='No more scouring for hours on the internet looking for solved question papers. Better utilize that time clearing important concepts and developing a deep understanding by going through our step by step solutions backed by the ninepointer guarantee.'
             actionText='Explore'
-            actionLink='https://linktr.ee/ninepointer'
+            actionLink='https://www.youtube.com/channel/UCgslF4zuDhDyttD9P3ZOHbg/playlists'
             imageSource='assets/svg-assets/undraw_text_files_au1q.svg'
             imageAlt='grades-svg'
           />
@@ -72,12 +72,18 @@ export default function Home() {
               country
             </h2>
             <div className={styles.numberCards}>
-              <NumberCard number='150k+' text='Views' />
-              <NumberCard number='42' text='Creators' />
+              <NumberCard number='40+' text='Creators' />
+              <NumberCard number='20+' text='Campus Managers' />
               <NumberCard number='3.5k+' text='ninepointers' />
             </div>
             <button>
-              <a href='https://linktr.ee/ninepointer'>Join the conversation</a>
+              <a
+                href='https://t.me/nine_pointer'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                Join the conversation
+              </a>
             </button>
           </div>
         </div>

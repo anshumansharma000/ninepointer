@@ -11,8 +11,8 @@ const HeroBanner = () => {
         </h2>
         <p>
           <strong>
-            Learn from ninepointers from India’s top colleges and stay ahead of
-            your college peers.
+            Learn from ninepointers from IITs, NITs, BITS and India’s other top
+            colleges and stay ahead of your college peers.
           </strong>
         </p>
         <div className={styles.action}>

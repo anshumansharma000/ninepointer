@@ -1,0 +1,18 @@
+.container{
+    position: absolute;
+    left: 950px;
+    top: 0px;
+    z-index: 5;
+    ul{
+        list-style: none;
+        li{
+            :hover{
+                color: green;
+            }
+        }
+    }
+
+    .clicked{
+        display: none;
+    }
+}
