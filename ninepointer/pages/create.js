@@ -36,6 +36,7 @@ const create = () => {
           link='https://docs.google.com/forms/d/1vKimFTCiCkxlXHxCepImYQXto6xjF2ZSQFA82GX1yPY/edit#responses'
         />
       </div>
+      {/* <h1>TESTIMONIALS</h1> */}
       <div className={styles.testimonials}>
         <TestimonialCard
           name='Aditya Shrivastava'
