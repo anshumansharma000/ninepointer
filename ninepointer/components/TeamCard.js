@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 import styles from '../styles/TeamCard.module.scss';
 
 const TeamCard = ({
@@ -6,6 +7,8 @@ const TeamCard = ({
   role,
   photo = 'assets/svg-assets/undraw_male_avatar_323b.svg',
   description,
+  twitter,
+  linkedIn,
 }) => {
   return (
     <div className={styles.container}>
@@ -16,6 +19,14 @@ const TeamCard = ({
         <h3>{name}</h3>
         <h4 style={{ color: '#0875F7' }}>{role}</h4>
         <p>{description}</p>
+        <div className={styles.socialLinks}>
+          <a href={twitter} target='_blank' rel='noopener noreferrer'>
+            <FaTwitter size={21} color='#0875F7' />
+          </a>
+          <a href={linkedIn} target='_blank' rel='noopener noreferrer'>
+            <FaLinkedinIn size={21} color='#0875F7' />
+          </a>
+        </div>
       </div>
     </div>
   );

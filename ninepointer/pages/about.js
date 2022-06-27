@@ -62,7 +62,7 @@ export default function About() {
           </div>
           <p style={{ fontWeight: 700 }}>
             We're one of the{' '}
-            <span style={{ color: 'navy', fontWeight: '700' }}>
+            <span style={{ color: '#0875F7', fontWeight: '700' }}>
               FASTEST GROWING
             </span>{' '}
             <span style={{ color: 'green', fontWeight: '700' }}>
@@ -81,11 +81,14 @@ export default function About() {
               name='Prateek Pawan'
               role='Co-founder'
               description='Founded successful food startups like Maa Bhook Lagi, Birinz, Paratha Experiment. NIT Rourkela alumni.'
+              twitter='https://www.twitter.com/prateekpawan'
             />
             <TeamCard
               name='Kush Beejal'
               role='Co-founder'
               description='Founder and Ex- CEO of NeoStencil, Ex-VP Unacademy, IIT Bombay and IIM Calcutta alumni.'
+              twitter='https://twitter.com/kushbeejal'
+              linkedIn='https://in.linkedin.com/in/kushbeejal'
             />
           </div>
         </div>

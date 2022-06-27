@@ -60,7 +60,14 @@ export const Navbar = () => {
           //   setDropdown(false);
           // }}
           >
-            <Link href='/content'>Browse content</Link>
+            //TODO: Add link to content page page
+            <a
+              href='https://www.youtube.com/channel/UCgslF4zuDhDyttD9P3ZOHbg/playlists'
+              rel='noopener noreferer'
+              target='_blank'
+            >
+              Browse content
+            </a>
           </li>
           <li>
             <Link href='/about'>About Us</Link>
@@ -88,7 +95,9 @@ export const Navbar = () => {
               <Link href='/create'>Create with us</Link>
             </li>
             <li>
-              <Link href='/contact'>Contact Us</Link>
+              <Link href='https://www.youtube.com/channel/UCgslF4zuDhDyttD9P3ZOHbg/playlists'>
+                Browse Content
+              </Link>
             </li>
           </ul>
         </div>
