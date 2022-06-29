@@ -50,7 +50,7 @@ export const Navbar = () => {
             <Link href='/'>Home</Link>
           </li>
           <li>
-            <Link href='/create'>Create with us</Link>
+            <Link href='/create'>Become a content creator</Link>
           </li>
           <li
           // onMouseEnter={() => {
@@ -60,7 +60,8 @@ export const Navbar = () => {
           //   setDropdown(false);
           // }}
           >
-            //TODO: Add link to content page page
+            {/* TODO://Add link to content page*/}
+
             <a
               href='https://www.youtube.com/channel/UCgslF4zuDhDyttD9P3ZOHbg/playlists'
               rel='noopener noreferer'
