@@ -59,6 +59,11 @@
     color: #3EC221;
 }
 
+.nav .logo{
+    width: 150px;
+    height: 90px;
+}
+
 .nav .logo img{
     padding-left: 48px;
     width: 100%;

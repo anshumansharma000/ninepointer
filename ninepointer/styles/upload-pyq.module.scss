@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    flex-direction: column;
+
+    form{
+        display: flex;
+        flex-direction: column;
+        label{
+            margin: 10px 0px;
+        }
+        section{
+            display: flex;
+            flex-direction: column;
+
+            input, select{
+                padding: 15px 30px;
+                margin: 10px 0px;
+                font-size: 15px;
+                border: solid 2px rgb(219,219,219);
+                border-radius: 10px;
+            }
+        }
+    }
+}
