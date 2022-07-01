@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from '../styles/pyq.module.scss';
+import PyqCards from '../components/PYQ/PyqCards';
 
 const pyq = () => {
   const [searchData, setSearchData] = useState({
@@ -9,6 +10,10 @@ const pyq = () => {
     branch: '',
     subject: '',
   });
+
+  const [responseData, setResponseData] = useState(null);
+  useEffect(() => {}, [responseData]);
+
   const handleClick = async () => {
     console.log(searchData.subject);
     const query = `?university=${searchData.university}&branch=${searchData.branch}&semester=${searchData.semester}&subject=${searchData.subject}`;
@@ -21,6 +26,11 @@ const pyq = () => {
 
     const response = await axios.get(queryUrl);
     console.log(response.data.data);
+    if (response.status === 200) {
+      console.log(response.status);
+      setResponseData(response.data.data);
+      console.log(responseData);
+    }
   };
 
   const handleChange = (e) => {
@@ -89,6 +99,14 @@ const pyq = () => {
           onChange={handleChange}
         />
         <button onClick={handleClick}>Search</button>
+      </section>
+
+      <section>
+        {responseData && (
+          <>
+            <PyqCards pyqs={responseData} />
+          </>
+        )}
       </section>
     </div>
   );

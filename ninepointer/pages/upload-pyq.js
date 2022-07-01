@@ -29,7 +29,7 @@ const uploadpyq = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let fd = new FormData();
-    fd.append('file', file);
+    if (file) fd.append('file', file);
     fd.append('branch', formData.branch);
     fd.append('semester', formData.semester);
     fd.append('year', formData.year);
@@ -42,8 +42,8 @@ const uploadpyq = () => {
     console.log(fd);
 
     const response = await axios.post(
-      // 'http://localhost:8000/api/v1/engineering/pyq',
-      'https://ninepointer-staging.herokuapp.com/api/v1/engineering/pyq',
+      'http://localhost:8000/api/v1/engineering/pyq',
+      // 'https://ninepointer-staging.herokuapp.com/api/v1/engineering/pyq',
       fd,
       {
         headers: {
@@ -131,6 +131,9 @@ const uploadpyq = () => {
           />
           <label htmlFor='type'>Question Type</label>
           <select name='type' onChange={handleChange}>
+            <option value='' disabled selected>
+              Select your option
+            </option>
             <option value='Regular'>Regular</option>
             <option value='Back'>Back</option>
             <option value='Both'>Both</option>

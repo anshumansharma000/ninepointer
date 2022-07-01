@@ -1,0 +1,16 @@
+.container{
+    padding: 2rem;
+    border: 2px solid black;
+    border-radius: 4px;
+    width: 60%;
+    margin-bottom: 2rem;
+    margin: 0 auto;
+    .info{
+        display: flex;
+        justify-content: space-between;
+    }
+    button{
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+}
