@@ -39,11 +39,11 @@
     //     padding: 16px;
     //   }
     ul{
-        display: block;
+        display: flex;
         margin-left: -2rem;
-        // flex-direction: column;
-        // align-items: flex-start;
-        // list-style: none;
+        flex-direction: column;
+        align-items: flex-start;
+        list-style: none;
         li{
 
             :hover{
