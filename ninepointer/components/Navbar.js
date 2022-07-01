@@ -8,12 +8,30 @@ export const Navbar = () => {
   const [active, setActive] = useState(false);
   const [showExtended, setShowExtended] = useState(false);
   // const [dropdown, setDropdown] = useState(false);
+  const [click, setClick] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
+  const handleClick = () => setClick(!click);
 
   const changeNavbarBackground = () => {
     if (window.scrollY > 60) {
       setActive(true);
     } else {
       setActive(false);
+    }
+  };
+  const onMouseEnter = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
     }
   };
 
@@ -52,16 +70,7 @@ export const Navbar = () => {
           <li>
             <Link href='/create'>Become a content creator</Link>
           </li>
-          <li
-          // onMouseEnter={() => {
-          //   setDropdown(true);
-          // }}
-          // onMouseLeave={() => {
-          //   setDropdown(false);
-          // }}
-          >
-            {/* TODO://Add link to content page*/}
-
+          <li onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
             <a
               href='https://www.youtube.com/channel/UCgslF4zuDhDyttD9P3ZOHbg/playlists'
               rel='noopener noreferer'
@@ -69,6 +78,7 @@ export const Navbar = () => {
             >
               Browse content
             </a>
+            {dropdown && <Dropdown />}
           </li>
           <li>
             <Link href='/about'>About Us</Link>

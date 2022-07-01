@@ -1,11 +1,51 @@
 .container{
     position: absolute;
-    left: 950px;
-    top: 0px;
+    // color: blue;
+    // display: flex;
+    // flex-direction: column;
+    top: 50px;
     z-index: 5;
-    ul{
+    .dropdownMenu {
+        background: white;
+        position: absolute;
+        top: 0px;
         list-style: none;
+        width: 250px;
+        text-align: start;
+      }
+      
+      .dropdownMenu li {
+        background: white;
+        cursor: pointer;
+        padding: 0.5rem;
+        color: black;
+        font-weight: 400;
+      }
+      
+      .dropdownMenu li:hover {
+        background: whitesmoke;
+      }
+      
+      .dropdownMenu.clicked {
+        display: none;
+      }
+      
+    //   .dropdownlink {
+    //     display: block;
+    //     height: 100%;
+    //     width: 100%;
+    //     text-decoration: none;
+    //     color: #fff;
+    //     padding: 16px;
+    //   }
+    ul{
+        display: block;
+        margin-left: -2rem;
+        // flex-direction: column;
+        // align-items: flex-start;
+        // list-style: none;
         li{
+
             :hover{
                 color: green;
             }

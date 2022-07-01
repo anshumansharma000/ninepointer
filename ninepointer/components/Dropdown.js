@@ -2,7 +2,9 @@ import { useState } from 'react';
 import styles from '../styles/Dropdown.module.scss';
 
 const Dropdown = () => {
-  const [dropdown, setDropdown] = useState(false);
+  const [click, setClick] = useState(false);
+
+  const handleClick = () => setClick(!click);
   return (
     <div
       className={styles.container}
@@ -14,24 +16,40 @@ const Dropdown = () => {
       //   }}
     >
       <ul
-        className={dropdown ? `${styles.clicked}` : ''}
-        onClick={() => setDropdown(!dropdown)}
+        className={click ? `${styles.clicked}` : styles.dropdownMenu}
+        onClick={handleClick}
       >
-        <li>
-          <a href='/content'>Topic Videos</a>
+        <li onClick={() => setClick(false)}>
+          <a
+            href='https://www.youtube.com/channel/UCgslF4zuDhDyttD9P3ZOHbg/videos'
+            rel='noopener noreferer'
+            target='_blank'
+          >
+            Topic Videos
+          </a>
         </li>
-        <li>
-          <a href='/pyq'>Previous Year Questions (PYQs)</a>
+        <li onClick={() => setClick(false)}>
+          <a href='/pyq'>PYQs</a>
         </li>
-        <li>
-          <a href='https://www.youtube.com/channel/UCgslF4zuDhDyttD9P3ZOHbg/playlists'>
+        <li onClick={() => setClick(false)}>
+          <a
+            href='https://www.youtube.com/channel/UCgslF4zuDhDyttD9P3ZOHbg/playlists'
+            rel='noopener noreferer'
+            target='_blank'
+          >
             PYQ Videos
           </a>
         </li>
-        <li>
-          <a href=''>Engineering Life</a>
+        <li onClick={() => setClick(false)}>
+          <a
+            href='https://www.youtube.com/playlist?list=PLAReQGYWy3mRnwhxXd0MkcbwGR5kMlFoR'
+            rel='noopener noreferer'
+            target='_blank'
+          >
+            Engineering Life
+          </a>
         </li>
-        <li>
+        <li onClick={() => setClick(false)}>
           <a href=''>Explore Universities</a>
         </li>
       </ul>
