@@ -16,7 +16,11 @@ const Dropdown = () => {
       //   }}
     >
       <ul
-        className={click ? `${styles.clicked}` : styles.dropdownMenu}
+        className={
+          click
+            ? `${styles.clicked} ${styles.dropdownMenu}`
+            : styles.dropdownMenu
+        }
         onClick={handleClick}
       >
         <li onClick={() => setClick(false)}>
