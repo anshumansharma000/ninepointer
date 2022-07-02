@@ -6,11 +6,7 @@ const PyqCards = ({ pyqs }) => {
     <div>
       <h2 style={{ textAlign: 'center' }}>PYQs</h2>
       {pyqs.map((pyq, index) => {
-        return (
-          <div key={index}>
-            <PyqCard pyq={pyq} />
-          </div>
-        );
+        return <PyqCard key={index} pyq={pyq} />;
       })}
     </div>
   );
