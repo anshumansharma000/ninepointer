@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from '../styles/pyq.module.scss';
 import PyqCards from '../components/PYQ/PyqCards';
+import { universities } from '../data/universities';
 
 const pyq = () => {
   const [searchData, setSearchData] = useState({
@@ -23,13 +24,25 @@ const pyq = () => {
     const devUrl = 'http://localhost:8000/api/v1/engineering/pyq';
     const queryUrl = url + query;
     console.log(queryUrl);
-
-    const response = await axios.get(queryUrl);
-    console.log(response.data.data);
-    if (response.status === 200) {
-      console.log(response.status);
-      setResponseData(response.data.data);
-      console.log(responseData);
+    try {
+      const response = await axios.get(queryUrl);
+      console.log(response.data.data);
+      if (response.status === 200) {
+        console.log(response.status);
+        setResponseData(response.data.data);
+        console.log(responseData);
+      }
+    } catch (err) {
+      if (err.response.status === 500) {
+        console.log('Something went wrong');
+        // setMessage('There was a problem with the server');
+      } else if (err.response.status === 400) {
+        console.log(err.response.data.error);
+        // setMessage(err.response.data.error);
+      } else {
+        console.log(err.response.data.error);
+        // setMessage(err.response.data.error);
+      }
     }
   };
 
@@ -50,14 +63,21 @@ const pyq = () => {
           <option value='' disabled selected>
             Select your option
           </option>
-          <option value='NIT Rourkela'>NIT Rourkela</option>
+          {/* <option value='NIT Rourkela'>NIT Rourkela</option>
           <option value='BPUT'>Biju Pattnaik University of Technology</option>
           <option value='IIT Bombay'>IIT Bombay</option>
           <option value='RTU'>Rajasthan Technical University(RTU)</option>
           <option value='VJTU'>VJTU, Mumbai</option>
           <option value='AKTU'>
             Abdul Kalam Technical University, Lucknow
-          </option>
+          </option> */}
+          {universities.map((university, index) => {
+            return (
+              <option key={index} value={university.name}>
+                {university.name}
+              </option>
+            );
+          })}
         </select>
         <label htmlFor='semester'>Semester</label>
         <select name='semester' id='semester' onChange={handleChange}>
@@ -102,7 +122,7 @@ const pyq = () => {
       </section>
 
       <section>
-        {responseData && (
+        {responseData && responseData.length > 0 && (
           <>
             <PyqCards pyqs={responseData} />
           </>

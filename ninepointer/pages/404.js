@@ -5,7 +5,7 @@ const notFound = () => {
   return (
     <div className={styles.container}>
       <div className={styles.image}>
-        <img src='assets/svg-assets/undraw_not_found_-60-pq.svg' alt='404' />
+        <img src='/assets/svg-assets/undraw_not_found_-60-pq.svg' alt='404' />
       </div>
       <h2>The page you seek is hiding. But worry not.</h2>
       <p>

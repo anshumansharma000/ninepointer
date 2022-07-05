@@ -3,21 +3,21 @@
     margin: 0 auto;
     min-height: 100vh;
     label{
-        margin: 10px 0px;
+        margin: 2px 0px;
     }
     section{
         display: flex;
         flex-direction: column;
 
         input, select{
-            padding: 10px 20px;
+            padding: 6px 20px;
             margin: 2px 0px;
-            font-size: 15px;
+            font-size: 16px;
             border: solid 2px rgb(219,219,219);
-            border-radius: 10px;
+            border-radius: 0.6rem;
         }
 
-        button{
+        input[type='submit']{
             margin-top: 1rem;
             padding: 1rem;
             color: white;

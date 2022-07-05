@@ -48,10 +48,7 @@ export const Navbar = () => {
       >
         <div className={navStyles.logo}>
           <Link href='/'>
-            <img
-              src='assets/images/channels4_profile-removebg-preview.png'
-              alt='Logo'
-            />
+            <img src='/assets/svg-assets/ninepointer_logo.svg' alt='Logo' />
           </Link>
         </div>
         <div className={navStyles.actionIcons}>

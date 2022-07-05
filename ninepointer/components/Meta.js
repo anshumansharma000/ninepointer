@@ -1,12 +1,13 @@
 import Head from 'next/head';
 
-const Meta = ({ title, keywords, description }) => {
+const Meta = ({ title, keywords, description, children }) => {
   return (
     <Head>
       <meta name='viewport' content='width =device-width, initial-scale=1' />
       <meta name='keywords' content={keywords} />
       <meta name='description' content={description} />
       <meta charSet='utf-8' />
+      {children}
       <link rel='preconnect' href='https://fonts.googleapis.com'></link>
       <link
         rel='preconnect'

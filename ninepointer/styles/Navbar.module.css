@@ -60,14 +60,16 @@
 }
 
 .nav .logo{
-    width: 150px;
-    height: 90px;
+    width: 200px;
+    /* height: 90px; */
+    align-self: center;
+
 }
 
 .nav .logo img{
     padding-left: 48px;
     width: 100%;
-    align-self: center;
+    /* align-self: center; */
 }
 
 .extendedNav .navItems{
@@ -93,8 +95,11 @@
         background-color: transparent;
         border: none;
     }
+    .nav .logo{
+        width: 150px;
+    }
     .nav .logo img{
-        height: 80px;
+        /* height: 80px; */
         padding: 0;
         width: 100%;
         align-self: center;
@@ -105,17 +110,20 @@
         padding-right: 1rem;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-end;
+        align-items: center;
         background-color: white;
     }
 
     .extendedNav .navItems ul{
         list-style: none;
+        text-align: center;
     }
 
     .extendedNav .navItems ul li{
         margin-bottom: 0.75rem;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
+        color: #3EC221;
+        font-weight: 600;
     }
 
 
