@@ -1,7 +1,9 @@
+@import '../../styles/colors';
+
 .container{
     background-color: #FAFAFA;
     /* background-color: #0F172A; */
-    color:  #0F172A;
+    color: $secondary-color;
     border-radius: 1rem;
     width: 11rem;
     /* padding: 1.5rem; */

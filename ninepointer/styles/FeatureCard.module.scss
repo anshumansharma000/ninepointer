@@ -1,9 +1,11 @@
+@import '../styles/colors';
+
 .container{
     padding: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:#0875F7;
+    background-color: $secondary-color;
     color: white;
     width: 200px;
     height: 100px;

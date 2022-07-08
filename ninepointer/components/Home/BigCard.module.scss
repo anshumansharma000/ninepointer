@@ -1,6 +1,10 @@
+@import '../../styles/colors';
+
 .cardContainer{
     display: flex;
+    // gap: 4rem;
     justify-content: flex-start;
+    align-items: center;
     height: 500px;
 }
 
@@ -25,10 +29,11 @@
     margin-top: 32px;
     width: 25%;
     padding: 16px;
-    background-color: #3EC221;
+    background-color: $primary-color;
     border-radius: 8px;
     border: none;
     color: white;
+
 }
 
 .imageContainer{

@@ -1,4 +1,4 @@
-import styles from '../styles/NumberCard.module.css';
+import styles from './NumberCard.module.scss';
 
 const NumberCard = ({ number, text }) => {
   return (

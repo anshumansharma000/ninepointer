@@ -70,7 +70,7 @@
 
 // export default Footer;
 
-import footerStyles from '../styles/Footer.module.css';
+import footerStyles from './Footer.module.scss';
 import Link from 'next/link';
 import {
   FaWhatsapp,

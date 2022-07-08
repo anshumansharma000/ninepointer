@@ -7,7 +7,7 @@ const Message = ({ msg, setMessage }) => {
       style={{
         padding: '0.5rem 2rem',
         color: 'white',
-        backgroundColor: 'navy',
+        backgroundColor: 'grey',
         display: 'flex',
         justifyContent: 'space-between',
         borderRadius: '0.2rem',

@@ -1,4 +1,4 @@
-import styles from '../styles/NewsLetter.module.css';
+import styles from './NewsLetter.module.scss';
 
 const NewsLetter = () => {
   return (

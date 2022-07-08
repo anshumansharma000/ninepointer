@@ -1,5 +1,5 @@
-import styles from '../styles/Layout.module.css';
-import Navbar from '../components/Navbar';
+import styles from './Layout.module.scss';
+import Navbar from './Navbar';
 import Footer from './Footer';
 import Meta from './Meta';
 import Dropdown from './Dropdown';

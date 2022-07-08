@@ -1,4 +1,4 @@
-import styles from '../styles/MobileCard.module.scss';
+import styles from './MobileCard.module.scss';
 
 const MobileCard = ({
   heading,

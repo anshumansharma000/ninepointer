@@ -1,0 +1,33 @@
+.outerContainer{
+    position: relative;
+    .container{
+        display: flex;
+        gap: 6rem;
+        position: relative;
+    }
+    .elevated{
+        position: absolute;
+        left: 8.5rem;
+        top: -1rem;
+        z-index: 3;
+    }
+}
+
+@media (max-width: 600px) {
+    .outerContainer{
+        margin-top: 2rem;
+        position: relative;
+    .container{
+        display: flex;
+        gap: 6rem;
+        position: relative;
+    }
+    .elevated{
+        // display: none;
+        position: absolute;
+        left: 7rem;
+        top: -1rem;
+        z-index: 3;
+    }
+    }
+}

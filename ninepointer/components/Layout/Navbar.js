@@ -1,4 +1,4 @@
-import navStyles from '../styles/Navbar.module.css';
+import navStyles from './Navbar.module.scss';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { FaStream } from 'react-icons/fa';

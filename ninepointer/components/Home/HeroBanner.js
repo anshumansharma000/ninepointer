@@ -1,4 +1,4 @@
-import styles from '../styles/HeroBanner.module.scss';
+import styles from './HeroBanner.module.scss';
 import Link from 'next/link';
 
 const HeroBanner = () => {
@@ -7,7 +7,7 @@ const HeroBanner = () => {
       <div className={styles.heroText}>
         <h2>
           Get better grades with{' '}
-          <span style={{ color: '#3EC221' }}>ninepointer.</span>
+          <span style={{ color: '#7BBB43' }}>ninepointer.</span>
         </h2>
         <p>
           <strong>
@@ -25,7 +25,7 @@ const HeroBanner = () => {
               Explore our content
             </a>
           </button>
-          <button style={{ color: '#3EC221', backgroundColor: 'white' }}>
+          <button style={{ color: '#7BBB43', backgroundColor: 'white' }}>
             <a
               href='https://linktr.ee/ninepointer'
               target='_blank'

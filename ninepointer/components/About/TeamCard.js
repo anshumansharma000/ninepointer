@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaLinkedinIn, FaTwitter } from 'react-icons/fa';
-import styles from '../styles/TeamCard.module.scss';
+import styles from './TeamCard.module.scss';
 
 const TeamCard = ({
   name,
@@ -17,14 +17,14 @@ const TeamCard = ({
       </div>
       <div className={styles.text}>
         <h3>{name}</h3>
-        <h4 style={{ color: '#0875F7' }}>{role}</h4>
+        <h4 style={{ color: '' }}>{role}</h4>
         <p>{description}</p>
         <div className={styles.socialLinks}>
           <a href={twitter} target='_blank' rel='noopener noreferrer'>
-            <FaTwitter size={21} color='#0875F7' />
+            <FaTwitter size={21} color='#033D29' />
           </a>
           <a href={linkedIn} target='_blank' rel='noopener noreferrer'>
-            <FaLinkedinIn size={21} color='#0875F7' />
+            <FaLinkedinIn size={21} color='#033D29' />
           </a>
         </div>
       </div>

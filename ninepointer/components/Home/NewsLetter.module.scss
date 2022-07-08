@@ -1,3 +1,5 @@
+@import '../../styles/colors';
+
 .container{
     border: black 0px solid;
     margin-bottom: 4rem;
@@ -26,13 +28,13 @@
 .container input:focus{
     outline: none;
     border: none;
-    border-bottom: green 2px solid;
+    border-bottom: $secondary-color 2px solid;
 }
 
 .container button{
     padding: 1.5rem;
     color: white;
-    background-color: #3EC221;
+    background-color: $primary-color;
     border: none;
     border-radius: 1rem;
     font-size: 1rem;

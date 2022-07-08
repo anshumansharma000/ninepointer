@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
 import axios from 'axios';
-import Meta from '../components/Meta';
+import Meta from '../components/Layout/Meta';
 import { universities } from '../data/universities';
 import styles from '../styles/upload-pyq.module.scss';
 import Message from '../components/Messge';
@@ -252,9 +252,9 @@ const uploadpyq = () => {
               onChange={handleChange}
             />
             <input type='submit' />
+            {message ? <Message msg={message} setMessage={setMessage} /> : null}
           </section>
         </form>
-        {message ? <Message msg={message} setMessage={setMessage} /> : null}
       </div>
     </Fragment>
   );

@@ -1,3 +1,5 @@
+@import '../../styles/colors';
+
 .extendedNav{
     display: flex;
     flex-direction: column;
@@ -43,7 +45,7 @@
 
 .nav ul li .highlight{
     color: white;
-    background-color:#3EC221;
+    background-color: #033D29;
     opacity: 1;
     padding: 10px;
     border-radius: 12px;
@@ -55,8 +57,8 @@
 }
 
 .nav ul li:not(.highlight):hover{
-    font-weight: 900;
-    color: #3EC221;
+    font-weight: 500;
+    color: $primary-color;
 }
 
 .nav .logo{

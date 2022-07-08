@@ -1,8 +1,8 @@
-import Meta from '../components/Meta';
+import Meta from '../components/Layout/Meta';
 import styles from '../styles/about.module.scss';
-import MessageBar from '../components/MessageBar';
+import MessageBar from '../components/About/MessageBar';
 import FeatureCard from '../components/FeatureCard';
-import TeamCard from '../components/TeamCard';
+import TeamCard from '../components/About/TeamCard';
 
 export default function About() {
   return (
