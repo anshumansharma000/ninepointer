@@ -4,7 +4,7 @@ const MessageBar = ({ children }) => {
   return (
     <div
       style={{
-        backgroundColor: '#3EC221',
+        backgroundColor: '#033D29',
         color: 'white',
         padding: '0.3rem',
         marginLeft: '-2rem',

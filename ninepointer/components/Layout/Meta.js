@@ -12,7 +12,7 @@ const Meta = ({ title, keywords, description, children }) => {
       <link
         rel='preconnect'
         href='https://fonts.gstatic.com'
-        crossorigin
+        crossOrigin
       ></link>
       <link
         href='https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bangers&family=Nunito&family=Readex+Pro:wght@200;300;400&display=swap'

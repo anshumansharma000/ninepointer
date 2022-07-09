@@ -5,7 +5,7 @@
     label{
         margin: 10px 0px;
     }
-    section{
+    .formInput{
         display: flex;
         flex-direction: column;
 
@@ -24,6 +24,17 @@
             background-color: green;
             border: none;
             border-radius: 0.6rem;
+        }
+    }
+
+    .pageNavigation{
+        display: flex;
+        justify-content: space-between;
+
+        button{
+            border: none;
+            background-color: transparent;
+            padding: 1.5rem;
         }
     }
 }

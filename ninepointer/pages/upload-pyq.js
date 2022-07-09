@@ -4,6 +4,8 @@ import Meta from '../components/Layout/Meta';
 import { universities } from '../data/universities';
 import styles from '../styles/upload-pyq.module.scss';
 import Message from '../components/Messge';
+import { storage } from '../utils/firebase';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 const uploadpyq = () => {
   const [formData, setFormData] = useState({
@@ -16,24 +18,35 @@ const uploadpyq = () => {
     author: '',
     type: '',
     url: '',
+    fileLink: '',
     // file: '',
   });
   const [message, setMessage] = useState('');
   const [file, setFile] = useState('');
   const [filename, setFilename] = useState('Choose File');
   const [uploadedFile, setUploadedFile] = useState({});
+  const [fileLink, setFileLink] = useState('');
   // const [uploadPercent, setUploadPercent] = useState(0);
 
-  const onChange = (e) => {
-    setFile(e.target.files[0]);
-    console.log(e.target.files[0]);
-    setFilename(e.target.files[0].name);
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const firebaseUpload = async (file) => {
+    if (!file) return;
+    const storageRef = ref(
+      storage,
+      `/pyqs/${file.name}-${formData.subject}-${formData.year}-${formData.semester}`
+    );
+    // const uploadTask = uploadBytes(storageRef, file).then((snapshot) => {
+    //   console.log('file uploaded');
+    //   getDownloadURL(snapshot.ref).then((url) => {
+    //     console.log(url);
+    //     setFileLink(url);
+    //     console.log(fileLink);
+    //   });
+    // });
+    const taskSnapshot = await uploadBytes(storageRef, file);
+    const url = await getDownloadURL(taskSnapshot.ref);
+    console.log(url);
+    setFileLink(url);
     let fd = new FormData();
-    if (file) fd.append('file', file);
     fd.append('branch', formData.branch);
     fd.append('semester', formData.semester);
     fd.append('year', formData.year);
@@ -41,14 +54,16 @@ const uploadpyq = () => {
     fd.append('subject', formData.subject);
     fd.append('university', formData.university);
     fd.append('author', formData.author);
-    if (formData.url) fd.append('url', formData.url);
+    fd.append('fileLink', url);
+
+    // if (formData.url) fd.append('url', formData.url);
 
     console.log(fd);
 
     try {
       const response = await axios.post(
-        // 'http://localhost:8000/api/v1/engineering/pyq',
-        'https://ninepointer-staging.herokuapp.com/api/v1/engineering/pyq',
+        'http://localhost:8000/api/v1/engineering/pyq',
+        // 'https://ninepointer-staging.herokuapp.com/api/v1/engineering/pyq',
         fd,
         {
           headers: {
@@ -70,6 +85,7 @@ const uploadpyq = () => {
       console.log(success);
       console.log(response.data);
       setMessage('File Uploaded');
+      setFileLink('');
       // setTimeout(() => setMessage(''), 8000);
     } catch (err) {
       if (err.response.status === 500) {
@@ -83,7 +99,84 @@ const uploadpyq = () => {
         setMessage(err.response.data.error);
       }
     }
+    setFileLink('');
     setTimeout(() => setMessage(''), 5000);
+  };
+
+  const onChange = (e) => {
+    setFile(e.target.files[0]);
+    console.log(e.target.files[0]);
+    setFilename(e.target.files[0].name);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    //check if file and link both are missing, then return error.
+    if (!file && !formData.url) {
+      setMessage('Please upload file or enter external link');
+      return;
+    }
+    // if (file) fd.append('file', file);
+    //if file exists upload to firebase storage and get url
+    if (file) {
+      await firebaseUpload(file);
+    } else {
+      let fd = new FormData();
+      fd.append('branch', formData.branch);
+      fd.append('semester', formData.semester);
+      fd.append('year', formData.year);
+      fd.append('type', formData.type);
+      fd.append('subject', formData.subject);
+      fd.append('university', formData.university);
+      fd.append('author', formData.author);
+      // if (fileLink) fd.append('fileLink', fileLink);
+
+      if (formData.url) fd.append('url', formData.url);
+
+      console.log(fd);
+
+      try {
+        const response = await axios.post(
+          'http://localhost:8000/api/v1/engineering/pyq',
+          // 'https://ninepointer-staging.herokuapp.com/api/v1/engineering/pyq',
+          fd,
+          {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
+            // onUploadProgress: (progressEvent) => {
+            //   setUploadPercent(
+            //     parseInt(
+            //       Math.round((progressEvent.loaded * 100) / progressEvent.total)
+            //     )
+            //   );
+            //   console.log(uploadPercent);
+            //   setTimeout(() => setUploadPercent(0), 8000);
+            // },
+          }
+        );
+
+        const success = response.status == 200;
+        console.log(success);
+        console.log(response.data);
+        setMessage('File Uploaded');
+        setFileLink('');
+        // setTimeout(() => setMessage(''), 8000);
+      } catch (err) {
+        if (err.response.status === 500) {
+          console.log('Something went wrong');
+          setMessage('There was a problem with the server');
+        } else if (err.response.status === 400) {
+          console.log(err.response.data.error);
+          setMessage(err.response.data.error);
+        } else {
+          console.log(err.response.data.error);
+          setMessage(err.response.data.error);
+        }
+      }
+      setFileLink('');
+      setTimeout(() => setMessage(''), 5000);
+    }
   };
 
   const handleChange = (e) => {
@@ -102,7 +195,7 @@ const uploadpyq = () => {
   return (
     <Fragment>
       <Meta
-        title='Upload PYQ- ninepointer'
+        title='Upload PYQs - ninepointer'
         // children={
         //   <>
         //     <link

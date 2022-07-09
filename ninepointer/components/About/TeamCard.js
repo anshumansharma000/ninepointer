@@ -5,7 +5,7 @@ import styles from './TeamCard.module.scss';
 const TeamCard = ({
   name,
   role,
-  photo = 'assets/svg-assets/undraw_male_avatar_323b.svg',
+  photo = '/assets/svg-assets/undraw_male_avatar_323b.svg',
   description,
   twitter,
   linkedIn,

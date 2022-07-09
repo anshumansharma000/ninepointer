@@ -7,7 +7,7 @@ import TeamCard from '../components/About/TeamCard';
 export default function About() {
   return (
     <>
-      <Meta title='About' />
+      <Meta title='About ninepointer' />
       <div className={styles.container}>
         <div className={styles.motto}>
           <div className={styles.mottoText}>
@@ -82,6 +82,7 @@ export default function About() {
               role='Co-founder'
               description='Founded successful food startups like Maa Bhook Lagi, Birinz, Paratha Experiment. NIT Rourkela alumni.'
               twitter='https://www.twitter.com/prateekpawan'
+              photo='/assets/images/cofounder_prateek.jpg'
             />
             <TeamCard
               name='Kush Beejal'
@@ -89,6 +90,7 @@ export default function About() {
               description='Founder and Ex- CEO of NeoStencil, Ex-VP Unacademy, IIT Bombay and IIM Calcutta alumni.'
               twitter='https://twitter.com/kushbeejal'
               linkedIn='https://in.linkedin.com/in/kushbeejal'
+              photo='/assets/images/cofounder_kush.jpg'
             />
           </div>
         </div>

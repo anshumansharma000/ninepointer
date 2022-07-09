@@ -1,8 +1,9 @@
 @import '../../styles/colors';
 .container{
     // padding: 2rem;
-    height: 85vh;
+    // height: 85vh;
     display: flex;
+    margin-bottom: 5rem;
     // align-items: center;
     // justify-content: flex-end;
     position: relative;
@@ -50,6 +51,7 @@
         height: fit-content;
         display: flex;
         flex-direction: column;
+        overflow: hidden;
 
         .heroText{
             margin-top: 0rem;

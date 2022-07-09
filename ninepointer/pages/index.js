@@ -61,7 +61,7 @@ export default function Home() {
         </div>
 
         <div className={styles.creators}>
-          <h2>Meet our amazing creators 👋</h2>
+          <h2 className={styles.textCenter}>Meet our amazing creators 👋</h2>
           <div className={styles.content}>
             <div className={styles.description}>
               <h3>Learn from the best of the best🎯</h3>
@@ -126,8 +126,8 @@ export default function Home() {
           <h2>Community voices 📣</h2>
           <div className={styles.content}>
             <VoiceCard
-              name='Aditya Shrivastava'
-              college='IIT Delhi'
+              name='Abhinandan Mishra'
+              college='NIT Rourkela'
               branch='CSE'
               year={3}
               photo='/assets/images/creator_rushi.jpeg'
