@@ -62,8 +62,8 @@ const uploadpyq = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:8000/api/v1/engineering/pyq',
-        // 'https://ninepointer-staging.herokuapp.com/api/v1/engineering/pyq',
+        // 'http://localhost:8000/api/v1/engineering/pyq',
+        'https://ninepointer-staging.herokuapp.com/api/v1/engineering/pyq',
         fd,
         {
           headers: {
@@ -137,8 +137,8 @@ const uploadpyq = () => {
 
       try {
         const response = await axios.post(
-          'http://localhost:8000/api/v1/engineering/pyq',
-          // 'https://ninepointer-staging.herokuapp.com/api/v1/engineering/pyq',
+          // 'http://localhost:8000/api/v1/engineering/pyq',
+          'https://ninepointer-staging.herokuapp.com/api/v1/engineering/pyq',
           fd,
           {
             headers: {
