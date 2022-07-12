@@ -22,7 +22,9 @@ const pyq = () => {
 
   const [responseData, setResponseData] = useState(null);
   useEffect(() => {
+    setLoading(true);
     fetchData();
+    setLoading(false);
   }, [page]);
 
   const override = {

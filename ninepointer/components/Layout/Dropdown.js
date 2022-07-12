@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './Dropdown.module.scss';
+import Link from 'next/link';
 
 const Dropdown = () => {
   const [click, setClick] = useState(false);
@@ -33,7 +34,7 @@ const Dropdown = () => {
           </a>
         </li>
         <li onClick={() => setClick(false)}>
-          <a href='/pyq'>PYQs</a>
+          <Link href='/pyq'>PYQs</Link>
         </li>
         <li onClick={() => setClick(false)}>
           <a

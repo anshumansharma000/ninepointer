@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './PyqCard.module.scss';
 import Chip from './Chip/Chip';
 import Axios from 'axios';
 import FileDownload from 'js-file-download';
 import axios from 'axios';
 import Router from 'next/router';
+import PyqModal from './PyqModal';
 const PyqCard = ({ pyq }) => {
+  const [showModal, setShowModal] = useState(false);
+
   const driveDownload = (link) => {
     let arr = link.split('/');
     console.log(arr);
@@ -28,6 +31,12 @@ const PyqCard = ({ pyq }) => {
       FileDownload(res.data, `${name}.pdf`);
     } catch (err) {
       console.log(err.message);
+    }
+  };
+
+  const handleModalClick = () => {
+    if (pyq.fileLink) {
+      setShowModal(true);
     }
   };
 
@@ -56,8 +65,10 @@ const PyqCard = ({ pyq }) => {
         >
           <button className={styles.secondaryBtn}>Solutions</button>
         </a>
+        <button className={styles.otherBtn} onClick={handleModalClick}>
+          View
+        </button>
         <button
-          className={styles.otherBtn}
           onClick={() => {
             pyq.fileLink[8] == 'd'
               ? driveDownload(pyq.fileLink)
@@ -71,10 +82,13 @@ const PyqCard = ({ pyq }) => {
         >
           Download PDF
         </button>
-        <a href={pyq.fileLink} rel='noopener noreferer' target='_blank'>
+        {/* <a href={pyq.fileLink} rel='noopener noreferer' target='_blank'>
           <button>View</button>
-        </a>
+        </a> */}
       </div>
+      {showModal && (
+        <PyqModal link={pyq.fileLink} setShowModal={setShowModal} />
+      )}
     </div>
   );
 };

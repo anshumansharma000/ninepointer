@@ -1,3 +1,4 @@
+@import '../../styles/colors';
 .container{
     display: flex;
     flex-direction: column;
@@ -29,7 +30,7 @@
             cursor: pointer;
             border: none;
             border-radius: 0.4rem;
-            background-color: green;
+            background-color: $primary-color;
             color: white;
             // margin: auto;
         }
@@ -38,7 +39,7 @@
             color: black;
         }
         .otherBtn{
-            background-color: blue;
+            background-color: $primary-blue ;
             margin-right: 0.5rem;
         }
     }
