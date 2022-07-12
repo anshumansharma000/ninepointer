@@ -19,6 +19,7 @@ const uploadpyq = () => {
     type: '',
     url: '',
     fileLink: '',
+    solutionLink: '',
     // file: '',
   });
   const [message, setMessage] = useState('');
@@ -55,6 +56,7 @@ const uploadpyq = () => {
     fd.append('university', formData.university);
     fd.append('author', formData.author);
     fd.append('fileLink', url);
+    fd.append('solutionLink', formData.solutionLink);
 
     // if (formData.url) fd.append('url', formData.url);
 
@@ -335,13 +337,22 @@ const uploadpyq = () => {
             onChange={handleChange}
           /> */}
             {/* {uploadPercent != 0 && <Progress percentage={uploadPercent} />} */}
-            <label htmlFor='Author'>Add external file link</label>
+            <label htmlFor='url'>Add external file link</label>
             <input
               type='url'
               name='url'
               id='url'
               placeholder='Add link to file'
               value={formData.url}
+              onChange={handleChange}
+            />
+            <label htmlFor='solutionLink'>Add solution link</label>
+            <input
+              type='solutionLink'
+              name='solutionLink'
+              id='solutionLink'
+              placeholder='Add solution Link'
+              value={formData.solutionLink}
               onChange={handleChange}
             />
             <input type='submit' />

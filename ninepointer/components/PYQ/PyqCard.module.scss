@@ -1,4 +1,7 @@
 .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 1rem;
     // border: 1px solid black;
     border-radius: 0.6rem;
@@ -19,11 +22,13 @@
     }
     .action{
         margin-top: 1rem;
+        display: flex;
+        justify-content: flex-end;
         button{
-            padding: 0.8rem;
+            padding: 0.5rem 1rem;
             cursor: pointer;
             border: none;
-            border-radius: 0.6rem;
+            border-radius: 0.4rem;
             background-color: green;
             color: white;
             // margin: auto;
@@ -31,6 +36,10 @@
         .secondaryBtn{
             background-color: #fafafa;
             color: black;
+        }
+        .otherBtn{
+            background-color: blue;
+            margin-right: 0.5rem;
         }
     }
 

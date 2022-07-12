@@ -1,7 +1,36 @@
 import React from 'react';
 import styles from './PyqCard.module.scss';
 import Chip from './Chip/Chip';
+import Axios from 'axios';
+import FileDownload from 'js-file-download';
+import axios from 'axios';
+import Router from 'next/router';
 const PyqCard = ({ pyq }) => {
+  const driveDownload = (link) => {
+    let arr = link.split('/');
+    console.log(arr);
+    console.log(arr[5]);
+    let id = arr[5];
+    let driveDownloadUrl = `https://drive.google.com/uc?id=${id}&export=download`;
+    Router.push(driveDownloadUrl);
+  };
+  const downloadPdf = async (link, name) => {
+    try {
+      const res = await Axios({
+        url: 'https://ninepointer-staging.herokuapp.com/download',
+        method: 'POST',
+        data: {
+          link,
+        },
+        responseType: 'blob',
+      });
+      console.log(res);
+      FileDownload(res.data, `${name}.pdf`);
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.info}>
@@ -13,21 +42,37 @@ const PyqCard = ({ pyq }) => {
         <Chip content={`Sem ${pyq.semester}`} />
         <Chip content={pyq.year} />
         <Chip content={pyq.type} />
+        <Chip content={pyq.university} />
       </div>
       <div className={styles.action}>
-        <a href={pyq.fileLink} rel='noopener noreferer' target='_blank'>
-          <button>Download</button>
-        </a>
         <a
           href={
-            pyq.solution
-              ? pyq.solution
-              : 'https://www.youtube.com/c/ninepointer'
+            pyq.solutionLink
+              ? pyq.solutionLink
+              : 'https://www.youtube.com/playlist?list=PLAReQGYWy3mT-RVghz2dNqITONQAF-5Zj'
           }
           rel='noopener noreferer'
           target='_blank'
         >
           <button className={styles.secondaryBtn}>Solutions</button>
+        </a>
+        <button
+          className={styles.otherBtn}
+          onClick={() => {
+            pyq.fileLink[8] == 'd'
+              ? driveDownload(pyq.fileLink)
+              : downloadPdf(
+                  pyq.fileLink,
+                  pyq.subject + pyq.semester + pyq.branch
+                  // 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
+                  // 'https://www.google.com'
+                );
+          }}
+        >
+          Download PDF
+        </button>
+        <a href={pyq.fileLink} rel='noopener noreferer' target='_blank'>
+          <button>View</button>
         </a>
       </div>
     </div>

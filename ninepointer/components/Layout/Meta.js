@@ -8,7 +8,7 @@ const Meta = ({ title, keywords, description, children }) => {
       <meta name='description' content={description} />
       <meta charSet='utf-8' />
       {children}
-      <link rel='preconnect' href='https://fonts.googleapis.com'></link>
+      {/* <link rel='preconnect' href='https://fonts.googleapis.com'></link>
       <link
         rel='preconnect'
         href='https://fonts.gstatic.com'
@@ -17,7 +17,7 @@ const Meta = ({ title, keywords, description, children }) => {
       <link
         href='https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bangers&family=Nunito&family=Readex+Pro:wght@200;300;400&display=swap'
         rel='stylesheet'
-      ></link>
+      ></link> */}
 
       <link
         rel='icon'

@@ -1,5 +1,6 @@
+@import '../styles/colors';
 .container{
-    width: 60%;
+    // width: 60%;
     margin: 0 auto;
     min-height: 100vh;
     label{
@@ -8,22 +9,33 @@
     .formInput{
         display: flex;
         flex-direction: column;
+        background-color: #e4dcdc;
+        padding: 2rem 5rem;
+        margin: 0 -4rem;
+        .inputs{
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
 
         input, select{
-            padding: 15px 30px;
+            padding: 10px 20px;
             margin: 10px 0px;
+            width: 200px;
             font-size: 15px;
             border: solid 2px rgb(219,219,219);
             border-radius: 10px;
         }
-
         button{
             margin-top: 1rem;
-            padding: 1rem;
+            padding: 0.8rem;
+            cursor: pointer;
             color: white;
             background-color: green;
             border: none;
             border-radius: 0.6rem;
+            align-self: center;
+            width: 30%;
         }
     }
 

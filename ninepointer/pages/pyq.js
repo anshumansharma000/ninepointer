@@ -21,24 +21,28 @@ const pyq = () => {
   const [page, setPage] = useState(1);
 
   const [responseData, setResponseData] = useState(null);
-  useEffect(() => {}, [page]);
+  useEffect(() => {
+    fetchData();
+  }, [page]);
 
   const override = {
     display: 'block',
     margin: '0 auto',
   };
 
-  const fetchData = async (val) => {
+  const fetchData = async (val = 0) => {
     console.log(searchData.subject);
 
     const quer = '';
 
     console.log(searchData.university);
-    quer += `?university=${searchData.university}`;
+    if (searchData.university) quer += `?university=${searchData.university}`;
     if (searchData.branch) quer += `&branch=${searchData.branch}`;
     if (searchData.semester) quer += `&semester=${searchData.semester}`;
     if (searchData.subject) quer += `&subject=${searchData.subject}`;
-    if (page > 0) quer += `&page=${page + parseInt(val)}`;
+    page > 0 && searchData.university
+      ? (quer += `&page=${page + parseInt(val)}`)
+      : (quer += `?page=${page + parseInt(val)}`);
 
     console.log(quer);
 
@@ -132,17 +136,18 @@ const pyq = () => {
       <Meta title='Previous Year Questions(PYQs) ninepointer' />
       <div className={styles.container}>
         <section className={styles.formInput}>
-          <label htmlFor='university'>University</label>
-          <select
-            name='university'
-            id='university'
-            onChange={handleChange}
-            required={true}
-          >
-            <option value='' disabled selected>
-              Select your option
-            </option>
-            {/* <option value='NIT Rourkela'>NIT Rourkela</option>
+          <div className={styles.inputs}>
+            <label htmlFor='university'>University</label>
+            <select
+              name='university'
+              id='university'
+              onChange={handleChange}
+              required={true}
+            >
+              <option value='' disabled selected>
+                Select your option
+              </option>
+              {/* <option value='NIT Rourkela'>NIT Rourkela</option>
           <option value='BPUT'>Biju Pattnaik University of Technology</option>
           <option value='IIT Bombay'>IIT Bombay</option>
           <option value='RTU'>Rajasthan Technical University(RTU)</option>
@@ -150,53 +155,54 @@ const pyq = () => {
           <option value='AKTU'>
             Abdul Kalam Technical University, Lucknow
           </option> */}
-            {universities.map((university, index) => {
-              return (
-                <option key={index} value={university.name}>
-                  {university.name}
-                </option>
-              );
-            })}
-          </select>
-          <label htmlFor='semester'>Semester</label>
-          <select name='semester' id='semester' onChange={handleChange}>
-            <option value='' disabled selected>
-              Select your option
-            </option>
-            <option value='1'>1</option>
-            <option value='2'>2</option>
-            <option value='3'>3</option>
-            <option value='4'>4</option>
-            <option value='5'>5</option>
-            <option value='6'>6</option>
-            <option value='7'>7</option>
-            <option value='8'>8</option>
-          </select>
-          <label htmlFor='branch'>Branch</label>
-          <select name='branch' id='branch' onChange={handleChange}>
-            <option value='' disabled selected>
-              Select your option
-            </option>
-            <option value='Common'>Common</option>
-            <option value='Computer Science'>Computer Science</option>
-            <option value='Electrical'>Electrical</option>
-            <option value='Electronics'>Electronics</option>
-            <option value='Chemical'>Chemical</option>
-            <option value='Civil'>Civil</option>
-            <option value='Mechanical'>Mechanical</option>
-            <option value='Textile'>Textile</option>
-            <option value='Ceramic'>Ceramic</option>
-            <option value='Biomedical'>Biomedical</option>
-            <option value='Metallurgy'>Metallurgy</option>
-            <option value='Metallurgy'>Others</option>
-          </select>
-          <label htmlFor='subject'>Subject</label>
-          <input
-            type='text'
-            name='subject'
-            value={searchData.subject}
-            onChange={handleChange}
-          />
+              {universities.map((university, index) => {
+                return (
+                  <option key={index} value={university.name}>
+                    {university.name}
+                  </option>
+                );
+              })}
+            </select>
+            <label htmlFor='semester'>Semester</label>
+            <select name='semester' id='semester' onChange={handleChange}>
+              <option value='' disabled selected>
+                Select your option
+              </option>
+              <option value='1'>1</option>
+              <option value='2'>2</option>
+              <option value='3'>3</option>
+              <option value='4'>4</option>
+              <option value='5'>5</option>
+              <option value='6'>6</option>
+              <option value='7'>7</option>
+              <option value='8'>8</option>
+            </select>
+            <label htmlFor='branch'>Branch</label>
+            <select name='branch' id='branch' onChange={handleChange}>
+              <option value='' disabled selected>
+                Select your option
+              </option>
+              <option value='Common'>Common</option>
+              <option value='Computer Science'>Computer Science</option>
+              <option value='Electrical'>Electrical</option>
+              <option value='Electronics'>Electronics</option>
+              <option value='Chemical'>Chemical</option>
+              <option value='Civil'>Civil</option>
+              <option value='Mechanical'>Mechanical</option>
+              <option value='Textile'>Textile</option>
+              <option value='Ceramic'>Ceramic</option>
+              <option value='Biomedical'>Biomedical</option>
+              <option value='Metallurgy'>Metallurgy</option>
+              <option value='Others'>Others</option>
+            </select>
+            <label htmlFor='subject'>Subject</label>
+            <input
+              type='text'
+              name='subject'
+              value={searchData.subject}
+              onChange={handleChange}
+            />
+          </div>
           <button onClick={handleClick}>Search</button>
         </section>
 
