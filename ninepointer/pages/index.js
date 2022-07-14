@@ -6,6 +6,7 @@ import NewsLetter from '../components/Home/NewsLetter';
 import MobileCard from '../components/Home/MobileCard';
 import CreatorCard from '../components/Home/CreatorCards';
 import CreatorCards from '../components/Home/CreatorCards';
+import Youtube from '../components/Home/Youtube';
 import Link from 'next/link';
 import VoiceCard from '../components/Home/VoiceCard';
 
@@ -147,8 +148,12 @@ export default function Home() {
             />
           </div>
         </div>
+        <div className={styles.featuredVideo}>
+          <h2>Now trending on ninepointer 🤩</h2>
+          <Youtube />
+        </div>
       </div>
-      <NewsLetter />
+      {/* <NewsLetter /> */}
     </div>
   );
 }
