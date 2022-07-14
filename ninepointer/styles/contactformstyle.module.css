@@ -1,0 +1,29 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family:  'poppins' , sans-serif;
+} */
+.mainCol {
+    position: absolute;
+width: 1785px;
+height: 1228px;
+left: 68px;
+top: 211px;
+
+background: #F5F5F5;
+
+}
+.sidebarCol {
+    position: absolute;
+width: 732px;
+height: 1228px;
+left: 1121px;
+top: 211px;
+
+background: #CACACA;
+}
+.flexcontainer {
+    display: flex;
+    flex-direction: column;
+}
