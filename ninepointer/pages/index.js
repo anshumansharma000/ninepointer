@@ -131,18 +131,18 @@ export default function Home() {
               college='NIT Rourkela'
               branch='CSE'
               year={3}
-              photo='/assets/images/creator_rushi.jpeg'
+              photo='/assets/images/abhinandan_voice.png'
               rightPic={true}
               testimonial='ninepointer has helped me get better grades. Learing from my peers instilled a confidence within me. Moreover they way of teaching, the lingo is quite intuitive. It felt like I was learning from a friend who was a tutor.'
             />
           </div>
           <div className={styles.content}>
             <VoiceCard
-              name='Aditya Shrivastava'
-              college='IIT Delhi'
-              branch='CSE'
+              name='Ankit Dara'
+              college='NIT Durgapur'
+              branch='Metallurgical and Materials Eng.'
               year={3}
-              photo='/assets/images/creator_nirjhar.jpg'
+              photo='/assets/images/ankit_voice.png'
               rightPic={false}
               testimonial='ninepointer has helped me get better grades. Learing from my peers instilled a confidence within me. Moreover they way of teaching, the lingo is quite intuitive. It felt like I was learning from a friend who was a tutor.'
             />
