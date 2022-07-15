@@ -134,7 +134,7 @@ const handleSubmit = async(e) => {
 </div>
 </div>
 </div>
-    
+    // should work now 
      
     )}           
     export default contactnew
