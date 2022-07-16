@@ -1,90 +1,189 @@
-import React from "react";
-import styles from '../styles/contactformstyle.module.css';
+import React, { useState } from 'react';
+import styles from '../styles/contactnew.module.scss';
+import { BsTelephoneFill } from 'react-icons/bs';
+import { SiGmail } from 'react-icons/si';
+import axios from 'axios';
+import Message from '../components/Messge';
+
 const contact = () => {
-    return(
-               
-        <form>
-			<div className={styles.flexcontainer}>
+  const [formData, setformData] = useState({
+    firstName: '',
+    lastName: '',
+    phoneNumber: '',
+    emailAddress: '',
+    collegeName: '',
+    message: '',
+  });
 
-			<section className={styles.mainCol}/>
-            
-            <div className ="main"> 
-		<div class="register">
-			<h2>We'd love to hear from you</h2></div>
-			<form id="register" method="post">
-			    <label>First Name :</label>
-			    
-			    <input type="text" name="fname" id="name" placeholder="Enter Your First Name"></input>
-			    <br/>
-			    <div>
-			    <label>Last Name : </label>
-			    <br/>
-    		
-            
-    		<input type="text" name="last-name" placeholder="Enter Your Last Name"></input>
-    		</div>
-			    	<br/>
-			    	<label>Your Phone no. :</label>
-			    	<br/>
-			    	<input type="number" name="Phone" id="name" placeholder="Enter your Roll No.">
-						 </input>
-			    	
-			    	<label>Email : </label>
-			    	<br/> 
-			    	<input type="email" name="email" id="name" placeholder="Enter your valid e-mail ID"></input>
-			    	<br/>
-			    	<div>
-            <label>College name</label>
-    		
-    		</div>
-    		<br/>
-    		
-    		
+  const resetForm = () => {
+    setformData({
+      firstName: '',
+      lastName: '',
+      phoneNumber: '',
+      emailAddress: '',
+      collegeName: '',
+      message: '',
+    });
+  };
 
-    		<div>
-            <label>Message</label>
-            <br/>
-    		<textarea name="MESSAGE" placeholder="Enter your suggestions(if any)"></textarea>
-    		</div>
-    		<br/>
-<input type="submit" name="submit"value="Submit"></input>
+  const [errorMessage, setErrorMessage] = useState('');
+  const handleChange = (e) => {
+    let name = e.target.name;
+    let value = e.target.value;
+    console.log(e.target.name);
+    console.log(e.target.value);
+    setformData((previousState) => ({
+      ...previousState,
+      [name]: value,
+    }));
+  };
+  // async submitForm() {
+  //     const formData = new FormData()
+  //     Object.keys(this.form).forEach((key) => {
+  //       formData.append(key, this.form[key])
+  //     })
 
+  //     try {
+  //       await this.$axios.post('/ajax/contact/contact-us', formData)
+  //       this.$emit('formSent')
+  //     } catch (err) {
+  //       this.errors.push('form_error')
+  //     }
+  //   }
 
-			</form> 
-			
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!formData.firstName || !formData.emailAddress || !formData.message) {
+      setErrorMessage('Please enter the required fields');
+      return;
+    }
+    try {
+      // const response = await axios.post('',formData);
+      //   console.log(response.status);
+      alert(`thank you ${formData.firstName}`);
+      resetForm();
+      //   if (response.status === 200) {
+      //     resetForm();
+      //   }
+    } catch (error) {
+      console.error(error);
+      setErrorMessage(error.message);
+    }
+  };
 
-        
-    )
-	
-</div>
-<section className={styles.sidebarCol}/>
+  return (
+    <div className={styles.container}>
+      <form onSubmit={handleSubmit}>
+        <div className={styles.containerLeft}>
+          <h2> We'd love to hear from you.</h2>
+          <div className={styles.rowElements}>
+            <input
+              type='text'
+              name='firstName'
+              placeholder='First Name*'
+              onChange={handleChange}
+              value={formData.firstName}
+              required={true}
+            />
+            <input
+              type='text'
+              name='lastName'
+              placeholder='Last Name*'
+              onChange={handleChange}
+              value={formData.lastName}
+            />
+          </div>
+          <div className={styles.rowElements}>
+            <input
+              type='text'
+              name='phoneNumber'
+              placeholder='Phone Number'
+              onChange={handleChange}
+              value={formData.phoneNumber}
+            />
+            <input
+              type='email'
+              name='emailAddress'
+              placeholder='Email Address*'
+              onChange={handleChange}
+              value={formData.emailAddress}
+              required={true}
+            />
+          </div>
+          <div className={styles.rowElements2}>
+            <input
+              type='text'
+              name='collegeName'
+              placeholder='College Name*'
+              onChange={handleChange}
+              value={formData.collegeName}
+            />
+            <br /> <br />
+            <input
+              type='textarea'
+              name='message'
+              placeholder='Your message goes here*'
+              onChange={handleChange}
+              value={formData.message}
+              required={true}
+            />{' '}
+          </div>
+          <br />
+          <input type='submit' />
+        </div>
+        {errorMessage && (
+          <Message msg={errorMessage} setMessage={setErrorMessage} />
+        )}
+      </form>
 
-<body>
-    <h1> Contact info </h1>
-    <br/> <br/> <br/> 
-<ion-icon name="call-outline"></ion-icon>  <p> +91 7536982139</p>
-<br/>
-<ion-icon name="mail-outline"></ion-icon>  <p> <a href="info@ninepointer.com"> </a> </p>
-    <br/> <br/>
-    <a href="https://www.facebook.com/people/ninepointer/100083236507235/">
-    <ion-icon name="logo-facebook"></ion-icon>
-    </a>
-<a href="https://api.whatsapp.com/send?phone=917737384957">
-<ion-icon name="logo-whatsapp"></ion-icon>
-</a>
+      <div className={styles.contactInfo}>
+        <h2> Contact Info</h2>
+        <div className={styles.contactIcons}>
+          <div className={styles.callicon}>
+            <BsTelephoneFill />
+            <p> +91 7536982139 </p>{' '}
+          </div>
+          <br /> <br />
+        </div>
+        <div className={styles.mailicon}>
+          <div className={styles.contactIcons}>
+            <SiGmail />
+            <p>
+              {' '}
+              <a href='mailto:info@ninepointer.com'>
+                info@ninepointer.com
+              </a>{' '}
+            </p>{' '}
+          </div>
+        </div>
+        <br />
+        <div className={styles.socialIcons}>
+          <a href='https://www.facebook.com/people/ninepointer/100083236507235/'>
+            <ion-icon name='logo-facebook'></ion-icon>
+          </a>
 
+          <a href='https://api.whatsapp.com/send?phone=917737384957'>
+            <ion-icon name='logo-whatsapp'></ion-icon>
+          </a>
 
-<a href="https://www.instagram.com/nine_pointer/">
-<ion-icon name="logo-instagram"></ion-icon>
-</a>
-<a href="https://www.youtube.com/channel/UCgslF4zuDhDyttD9P3ZOHbg/featured">
-<ion-icon name="logo-youtube"></ion-icon>
-</a>
+          <a href='https://www.instagram.com/nine_pointer/'>
+            <ion-icon name='logo-instagram'></ion-icon>
+          </a>
+          <a href='https://www.youtube.com/channel/UCgslF4zuDhDyttD9P3ZOHbg/featured'>
+            <ion-icon name='logo-youtube'></ion-icon>
+          </a>
 
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body>
-</div> </form> 
- )}
-
-export default contact 
+          <script
+            type='module'
+            src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'
+          ></script>
+          <script
+            noModule
+            src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'
+          ></script>
+        </div>
+      </div>
+    </div>
+  );
+};
+export default contact;
