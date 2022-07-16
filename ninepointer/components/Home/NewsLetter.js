@@ -3,9 +3,9 @@ import styles from './NewsLetter.module.scss';
 const NewsLetter = () => {
   return (
     <div className={styles.container}>
-      <h2>Catch up on the latest updates in the space.</h2>
+      <h2>Catch up on the latest updates from the Community</h2>
       <p style={{ color: 'grey', fontWeight: '600' }}>
-        Subscribe to our newsletter. No spam ever. Pinky promise.
+        Subscribe to our Newsletter ( We never spam our users )
       </p>
       <div className={styles.action}>
         <input

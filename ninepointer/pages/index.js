@@ -15,12 +15,12 @@ export default function Home() {
       <div>
         <HeroBanner />
         <div className={styles.bigCards}>
-          <h2 style={{ textAlign: 'center' }}>Ways to learn 📝</h2>
+          <h2 style={{ textAlign: 'center' }}>What do you want to study📝 today?</h2>
           <BigCard
             leftText={false}
-            heading='Topic specific course videos'
-            cardText1='The friend who teaches you the night before the exam. Now one step closer to you, on demand.'
-            cardText2='Our content goes through various quality checks to ensure content integretity and authenticity before the final upload. You can rest assured with ninepointer guarantee.'
+            heading='Branch specific Topic videos '
+            cardText1='The friend who teaches you one night before the exam is now one step closer to you, on demand.'
+            cardText2='Our content goes through various quality checks to ensure content integrity and authenticity before the final upload. You can be rest assured with ninepointer guarantee.'
             actionText='Browse videos'
             actionLink='https://www.youtube.com/channel/UCgslF4zuDhDyttD9P3ZOHbg'
             imageSource='assets/svg-assets/undraw_video_files_fu10.svg'
@@ -29,9 +29,9 @@ export default function Home() {
           />
           <BigCard
             leftText={true}
-            heading='Previous Year Questions and solutions'
-            cardText1='All your exam worries sorted with previous year questions and solutions'
-            cardText2='No more scouring for hours on the internet looking for solved question papers. Better utilize that time clearing important concepts and developing a deep understanding by going through our step by step solutions backed by the ninepointer guarantee.'
+            heading='Previous Year Questions Papers'
+            cardText1='All your exam worries sorted with the solutions to previous year question papers of your collge'
+            cardText2='No more hours of scouring on the internet looking for solved question papers. Better utilize that time clearing important concepts and developing a deep understanding of PYQs by going through our step by step solutions backed by ninepointer guarantee.'
             actionText='Search PYQs'
             actionLink='https://www.youtube.com/channel/UCgslF4zuDhDyttD9P3ZOHbg/playlists'
             imageSource='assets/svg-assets/undraw_text_files_au1q.svg'
@@ -44,7 +44,7 @@ export default function Home() {
             heading='Topic specific course videos'
             cardText1='The friend who teaches you the night before the exam. Now one step closer to you, on demand.'
             cardText2='Our content goes through various quality checks to ensure content integretity and authenticity before the final upload. You can rest assured with ninepointer guarantee.'
-            actionText='Browse videos'
+            actionText='Browse Videos'
             actionLink='https://www.youtube.com/channel/UCgslF4zuDhDyttD9P3ZOHbg'
             imageSource='assets/svg-assets/undraw_video_files_fu10.svg'
             imageAlt='grades-svg'

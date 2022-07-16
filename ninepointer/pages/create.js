@@ -46,21 +46,21 @@ const create = () => {
             sgpa='9.01'
             branch='CSE'
             college='IIT Delhi'
-            testimonial='Ninepointer has been a revelation in my journey as a student, content creator and educator. Creating content has helped me fortify key academic concepts by learning, reviewing and then teaching and thereby filling the gaps. Feynman technique does work. It has helped me improve my grades, exam preparations thanks to the extensive previous year questions bank and all the while getting paid for the contribution to the ninepointer community. It is a positive sum game for all of us.'
+            testimonial='ninepointer has been a revelation in my journey as a student, content creator and educator. Creating content has helped me fortify key academic concepts by learning, reviewing and then teaching and thereby filling the gaps. Feynman technique does work. It has helped me improve my grades, exam preparations thanks to the extensive previous year questions bank and all the while getting paid for the contribution to the ninepointer community. It is a positive sum game for all of us.'
           />
           <TestimonialCard
             name='Abhinandan Mishra'
             sgpa='9.01'
             branch='CSE'
             college='NIT Rourkela'
-            testimonial='Ninepointer has been a revelation in my journey as a student, content creator and educator. Creating content has helped me fortify key academic concepts by learning, reviewing and then teaching and thereby filling the gaps. Feynman technique does work. It has helped me improve my grades, exam preparations thanks to the extensive previous year questions bank and all the while getting paid for the contribution to the ninepointer community. It is a positive sum game for all of us.'
+            testimonial='ninepointer has been a revelation in my journey as a student, content creator and educator. Creating content has helped me fortify key academic concepts by learning, reviewing and then teaching and thereby filling the gaps. Feynman technique does work. It has helped me improve my grades, exam preparations thanks to the extensive previous year questions bank and all the while getting paid for the contribution to the ninepointer community. It is a positive sum game for all of us.'
           />
           <TestimonialCard
             name='Rushi Kale'
             sgpa='9.01'
             branch='CSE'
             college='IIT Bombay'
-            testimonial='Ninepointer has been a revelation in my journey as a student, content creator and educator. Creating content has helped me fortify key academic concepts by learning, reviewing and then teaching and thereby filling the gaps. Feynman technique does work. It has helped me improve my grades, exam preparations thanks to the extensive previous year questions bank and all the while getting paid for the contribution to the ninepointer community. It is a positive sum game for all of us. '
+            testimonial='ninepointer has been a revelation in my journey as a student, content creator and educator. Creating content has helped me fortify key academic concepts by learning, reviewing and then teaching and thereby filling the gaps. Feynman technique does work. It has helped me improve my grades, exam preparations thanks to the extensive previous year questions bank and all the while getting paid for the contribution to the ninepointer community. It is a positive sum game for all of us. '
           />
         </div>
       </div>

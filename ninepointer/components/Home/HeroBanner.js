@@ -7,11 +7,11 @@ const HeroBanner = () => {
       <div className={styles.heroText}>
         <h2>
           Get better grades with{' '}
-          <span style={{ color: '#7BBB43' }}>ninepointer.</span>
+          <span style={{ color: '#7BBB43' }}>ninepointer</span>
         </h2>
         <p>
           <strong>
-            Learn from ninepointers from IITs, NITs, BITS and India’s other top
+            Learn from ninepointers of IITs, NITs, BITS and India’s other top
             colleges and stay ahead of your college peers.
           </strong>
         </p>
@@ -22,7 +22,7 @@ const HeroBanner = () => {
               target='_blank'
               rel='noopener noreferrer'
             >
-              Explore our content
+              Explore Our Content
             </a>
           </button>
           <button style={{ color: '#7BBB43', backgroundColor: 'white' }}>
@@ -31,7 +31,7 @@ const HeroBanner = () => {
               target='_blank'
               rel='noopener noreferrer'
             >
-              Join the community
+              Join the Community
             </a>
           </button>
         </div>
