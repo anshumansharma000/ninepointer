@@ -89,7 +89,7 @@ const Footer = () => {
           <h3>ninepointer</h3>
           <p>
             ninepointer is a platform where students can access course content
-            uploaded by others just like them with a deep insight on subjects.
+            uploaded by students just like them with a deeper understanding of the subjects.
           </p>
         </div>
         <div className={footerStyles.links}>
@@ -119,7 +119,7 @@ const Footer = () => {
               <Link href='/terms'>Terms of Use</Link>
             </li>
             <li>
-              <Link href='/privacy'>Privacy policy</Link>
+              <Link href='/privacy'>Privacy Policy</Link>
             </li>
             <li>
               <Link href='/copyright'>Copyright Policy</Link>
