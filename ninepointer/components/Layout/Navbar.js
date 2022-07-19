@@ -65,7 +65,7 @@ export const Navbar = () => {
             <Link href='/'>Home</Link>
           </li>
           <li>
-            <Link href='/create'>Become a content creator</Link>
+            <Link href='/create'>Become a Content Creator</Link>
           </li>
           <li onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
             <a
@@ -73,7 +73,7 @@ export const Navbar = () => {
               rel='noopener noreferer'
               target='_blank'
             >
-              Browse content
+              Browse our Content
             </a>
             {dropdown && <Dropdown />}
           </li>

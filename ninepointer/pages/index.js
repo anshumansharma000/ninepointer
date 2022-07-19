@@ -17,12 +17,12 @@ export default function Home() {
       <div>
         <HeroBanner />
         <div className={styles.bigCards}>
-          <h2 style={{ textAlign: 'center' }}>Ways to learn 📝</h2>
+          <h2 style={{ textAlign: 'center' }}>What do you want to study📝 today?</h2>
           <BigCard
             leftText={false}
-            heading='Topic specific course videos'
-            cardText1='The friend who teaches you the night before the exam. Now one step closer to you, on demand.'
-            cardText2='Our content goes through various quality checks to ensure content integretity and authenticity before the final upload. You can rest assured with ninepointer guarantee.'
+            heading='Branch specific Topic videos '
+            cardText1='The friend who teaches you one night before the exam is now one step closer to you, on demand.'
+            cardText2='Our content goes through various quality checks to ensure content integrity and authenticity before the final upload. You can be rest assured with ninepointer guarantee.'
             actionText='Browse videos'
             actionLink='https://www.youtube.com/channel/UCgslF4zuDhDyttD9P3ZOHbg'
             imageSource='assets/svg-assets/undraw_video_files_fu10.svg'
@@ -31,9 +31,9 @@ export default function Home() {
           />
           <BigCard
             leftText={true}
-            heading='Previous Year Questions and solutions'
-            cardText1='All your exam worries sorted with previous year questions and solutions'
-            cardText2='No more scouring for hours on the internet looking for solved question papers. Better utilize that time clearing important concepts and developing a deep understanding by going through our step by step solutions backed by the ninepointer guarantee.'
+            heading='Previous Year Question Papers'
+            cardText1='All your exam worries sorted with the solutions to previous year question papers of your college'
+            cardText2='No more hours of scouring on the internet looking for solved question papers. Better utilize that time clearing important concepts and developing a deep understanding of PYQs by going through our step by step solutions backed by ninepointer guarantee.'
             actionText='Search PYQs'
             actionLink='https://www.youtube.com/channel/UCgslF4zuDhDyttD9P3ZOHbg/playlists'
             imageSource='assets/svg-assets/undraw_text_files_au1q.svg'
@@ -46,7 +46,7 @@ export default function Home() {
             heading='Topic specific course videos'
             cardText1='The friend who teaches you the night before the exam. Now one step closer to you, on demand.'
             cardText2='Our content goes through various quality checks to ensure content integretity and authenticity before the final upload. You can rest assured with ninepointer guarantee.'
-            actionText='Browse videos'
+            actionText='Browse Videos'
             actionLink='https://www.youtube.com/channel/UCgslF4zuDhDyttD9P3ZOHbg'
             imageSource='assets/svg-assets/undraw_video_files_fu10.svg'
             imageAlt='grades-svg'
@@ -63,10 +63,10 @@ export default function Home() {
         </div>
 
         <div className={styles.creators}>
-          <h2 className={styles.textCenter}>Meet our amazing creators 👋</h2>
+          <h2 className={styles.textCenter}>Meet our amazing Creators 👋</h2>
           <div className={styles.content}>
             <div className={styles.description}>
-              <h3>Learn from the best of the best🎯</h3>
+              <h3>Learn from the best of the bests🎯</h3>
               <p>
                 ninepointer is powered by a community of ninepointers from IITs,
                 NITs, BITS and other top universities of India. They have a
@@ -75,13 +75,13 @@ export default function Home() {
               </p>
               <div className={styles.action}>
                 <Link href='/create'>
-                  <button>Join as a creator</button>
+                  <button>Join as a Creator</button>
                 </Link>
                 <Link href='/create'>
                   <button
                     style={{ color: 'green', backgroundColor: 'transparent' }}
                   >
-                    Contribute in other ways
+                    Contribute in Other Ways
                   </button>
                 </Link>
               </div>
@@ -105,7 +105,7 @@ export default function Home() {
           </div>
           <div className={styles.right}>
             <h2>
-              We're one of the fastet growing student communities across the
+              We're one of the fastest growing student communities across the
               country
             </h2>
             <div className={styles.numberCards}>
@@ -119,7 +119,7 @@ export default function Home() {
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                Join the conversation
+                Join the Conversation
               </a>
             </button>
           </div>
@@ -134,7 +134,7 @@ export default function Home() {
               year={3}
               photo='/assets/images/abhinandan_voice.png'
               rightPic={true}
-              testimonial='ninepointer has helped me get better grades. Learing from my peers instilled a confidence within me. Moreover they way of teaching, the lingo is quite intuitive. It felt like I was learning from a friend who was a tutor.'
+              testimonial='ninepointer has helped me get better grades. Learning from my peers instilled confidence within me. Moreover the way of teaching, the lingo is quite intuitive. It felt like I was learning from a friend who was a tutor.'
             />
           </div>
           <div className={styles.content}>
@@ -145,7 +145,7 @@ export default function Home() {
               year={3}
               photo='/assets/images/ankit_voice.png'
               rightPic={false}
-              testimonial='ninepointer has helped me get better grades. Learing from my peers instilled a confidence within me. Moreover they way of teaching, the lingo is quite intuitive. It felt like I was learning from a friend who was a tutor.'
+              testimonial='I used to score 7-pointer in my previous semesters. With each universities solutions available on the youtube channel of ninepointer, I easily got the previous years papers of my college solutions which helped me in my end-term exams finally got 8.6 CGPA this term.'
             />
           </div>
         </div>
