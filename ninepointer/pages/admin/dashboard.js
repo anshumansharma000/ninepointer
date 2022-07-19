@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Pyqs from '../../components/Admin/Dashboard/Pyqs';
 
 const dashboard = () => {
+  const [view, setView] = useState('pyqs');
+
+  const getView = () => {
+    console.log(view);
+    if (view == 'pyqs') {
+      return <Pyqs />;
+    }
+  };
   return (
-    <div>
-      <div>dashboard</div>
-    </div>
+    <>
+      {/* <SideBar /> */}
+      <main>
+        <div>
+          <Pyqs />
+        </div>
+      </main>
+    </>
   );
 };
 

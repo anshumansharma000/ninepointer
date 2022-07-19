@@ -16,24 +16,22 @@ const HeroBanner = () => {
           </strong>
         </p>
         <div className={styles.action}>
-          <button>
-            <a
-              href='https://www.youtube.com/channel/UCgslF4zuDhDyttD9P3ZOHbg'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              Explore our content
-            </a>
-          </button>
-          <button style={{ color: '#7BBB43', backgroundColor: 'white' }}>
-            <a
-              href='https://linktr.ee/ninepointer'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
+          <a
+            href='https://www.youtube.com/channel/UCgslF4zuDhDyttD9P3ZOHbg'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <button>Explore our content</button>
+          </a>
+          <a
+            href='https://linktr.ee/ninepointer'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <button style={{ color: '#7BBB43', backgroundColor: 'white' }}>
               Join the community
-            </a>
-          </button>
+            </button>
+          </a>
         </div>
       </div>
       <div className={styles.heroImage}>

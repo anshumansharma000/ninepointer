@@ -36,12 +36,16 @@
         }
         button{
             color: white;
+            cursor: pointer;
             background-color: $primary-color;
             border: none;
             padding: 1rem;
             border-radius: 1rem;
             font-size: 0.9rem;
             font-weight: 700;
+            &:hover{
+                background-color: $other-primary;
+            }
         }
     }
 }

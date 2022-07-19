@@ -9,6 +9,7 @@ import CreatorCards from '../components/Home/CreatorCards';
 import Youtube from '../components/Home/Youtube';
 import Link from 'next/link';
 import VoiceCard from '../components/Home/VoiceCard';
+import VideoSlider from '../components/Home/VideoSlider';
 
 export default function Home() {
   return (
@@ -150,7 +151,8 @@ export default function Home() {
         </div>
         <div className={styles.featuredVideo}>
           <h2>Now trending on ninepointer 🤩</h2>
-          <Youtube />
+          {/* <Youtube /> */}
+          <VideoSlider />
         </div>
       </div>
       {/* <NewsLetter /> */}

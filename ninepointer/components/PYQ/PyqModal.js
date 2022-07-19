@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './PyqModal.module.scss';
 
 const PyqModal = ({ link, setShowModal }) => {
@@ -14,11 +14,28 @@ const PyqModal = ({ link, setShowModal }) => {
     url = link;
   }
   console.log(url);
+
+  useEffect(() => {
+    function handleEscapeKey(event) {
+      if (event.code === 'Escape') {
+        setShowModal(false);
+      }
+    }
+
+    document.addEventListener('keydown', handleEscapeKey);
+    return () => document.removeEventListener('keydown', handleEscapeKey);
+  }, []);
+
   return (
     <div
       className={styles.overlay}
       onClick={() => {
         setShowModal(false);
+      }}
+      onKeyDown={(e) => {
+        if (e.code === 'Escape') {
+          setShowModal(false);
+        }
       }}
     >
       <div className={styles.container}>

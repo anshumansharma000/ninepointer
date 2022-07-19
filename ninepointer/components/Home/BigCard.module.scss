@@ -28,11 +28,16 @@
 .textContainer .actionButton{
     margin-top: 32px;
     width: 25%;
+    cursor: pointer;
     padding: 16px;
     background-color: $primary-color;
     border-radius: 8px;
     border: none;
     color: white;
+
+    &:hover{
+        background-color: $other-primary;
+    }
 
 }
 

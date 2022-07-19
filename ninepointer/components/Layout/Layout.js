@@ -4,20 +4,33 @@ import Footer from './Footer';
 import Meta from './Meta';
 import Dropdown from './Dropdown';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 const Layout = ({ children }) => {
-  const [dropdown, setDropdown] = useState(false);
-  return (
-    <>
-      <Meta />
-      <Navbar />
-      {/* {dropdown && <Dropdown dropdown={dropdown} setDropdown={setDropdown} />} */}
-      <div className={styles.container}>
-        <main>{children}</main>
-      </div>
-      <Footer />
-    </>
-  );
+  const router = useRouter();
+  if (!router.pathname.startsWith('/admin')) {
+    return (
+      <>
+        <Meta />
+        <Navbar />
+        {/* {dropdown && <Dropdown dropdown={dropdown} setDropdown={setDropdown} />} */}
+        <div className={styles.container}>
+          <main>{children}</main>
+        </div>
+        <Footer />
+      </>
+    );
+  } else {
+    return (
+      <>
+        <Meta />
+        <div className={styles.container}>
+          <main>{children}</main>
+        </div>
+        <Footer />
+      </>
+    );
+  }
 };
 
 export default Layout;
