@@ -13,8 +13,8 @@ export default function About() {
           <div className={styles.mottoText}>
             <h1>Our Why</h1>
             <p>
-              We at ninepointer aim to induce community based learning platforms
-              across the country where students can colaborate, learn from top
+              We at ninepointer aim to induce community based learning platform
+              across the country where students can collaborate, learn from top
               ninepointers from premiere institutions like IITs, NITs, BITS etc.
               in an intuitive manner and improve their grades consequently.
             </p>
@@ -35,7 +35,7 @@ export default function About() {
                 >
                   <strong>here</strong>
                 </a>{' '}
-                to learn more.
+                to know more.
               </span>
             </>
           }
@@ -44,9 +44,9 @@ export default function About() {
         <div className={styles.whatWeDo}>
           <h1>What do we do?</h1>
           <p>
-            We provide a platform for ninepointers to create content on the
-            topics they have a deep understanding and other students to consume
-            high quality course content from India's top ninepointers from IITs,
+            We provide a platform for ninepointers and other students where ninepointers create  course content on the
+            topics they have deeper understanding with and other students consume their
+            high quality course content. ninepointers are the students from India's top colleges like IITs,
             NITs, BITS and other top colleges.
           </p>
           <div className={styles.featureCards}>

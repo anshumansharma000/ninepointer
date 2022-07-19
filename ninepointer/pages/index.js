@@ -29,8 +29,8 @@ export default function Home() {
           />
           <BigCard
             leftText={true}
-            heading='Previous Year Questions Papers'
-            cardText1='All your exam worries sorted with the solutions to previous year question papers of your collge'
+            heading='Previous Year Question Papers'
+            cardText1='All your exam worries sorted with the solutions to previous year question papers of your college'
             cardText2='No more hours of scouring on the internet looking for solved question papers. Better utilize that time clearing important concepts and developing a deep understanding of PYQs by going through our step by step solutions backed by ninepointer guarantee.'
             actionText='Search PYQs'
             actionLink='https://www.youtube.com/channel/UCgslF4zuDhDyttD9P3ZOHbg/playlists'
@@ -61,10 +61,10 @@ export default function Home() {
         </div>
 
         <div className={styles.creators}>
-          <h2 className={styles.textCenter}>Meet our amazing creators 👋</h2>
+          <h2 className={styles.textCenter}>Meet our amazing Creators 👋</h2>
           <div className={styles.content}>
             <div className={styles.description}>
-              <h3>Learn from the best of the best🎯</h3>
+              <h3>Learn from the best of the bests🎯</h3>
               <p>
                 ninepointer is powered by a community of ninepointers from IITs,
                 NITs, BITS and other top universities of India. They have a
@@ -73,13 +73,13 @@ export default function Home() {
               </p>
               <div className={styles.action}>
                 <Link href='/create'>
-                  <button>Join as a creator</button>
+                  <button>Join as a Creator</button>
                 </Link>
                 <Link href='/create'>
                   <button
                     style={{ color: 'green', backgroundColor: 'transparent' }}
                   >
-                    Contribute in other ways
+                    Contribute in Other Ways
                   </button>
                 </Link>
               </div>
@@ -103,7 +103,7 @@ export default function Home() {
           </div>
           <div className={styles.right}>
             <h2>
-              We're one of the fastet growing student communities across the
+              We're one of the fastest growing student communities across the
               country
             </h2>
             <div className={styles.numberCards}>
@@ -117,7 +117,7 @@ export default function Home() {
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                Join the conversation
+                Join the Conversation
               </a>
             </button>
           </div>
@@ -132,7 +132,7 @@ export default function Home() {
               year={3}
               photo='/assets/images/creator_rushi.jpeg'
               rightPic={true}
-              testimonial='ninepointer has helped me get better grades. Learing from my peers instilled a confidence within me. Moreover they way of teaching, the lingo is quite intuitive. It felt like I was learning from a friend who was a tutor.'
+              testimonial='ninepointer has helped me get better grades. Learning from my peers instilled confidence within me. Moreover the way of teaching, the lingo is quite intuitive. It felt like I was learning from a friend who was a tutor.'
             />
           </div>
           <div className={styles.content}>
@@ -143,7 +143,7 @@ export default function Home() {
               year={3}
               photo='/assets/images/creator_nirjhar.jpg'
               rightPic={false}
-              testimonial='ninepointer has helped me get better grades. Learing from my peers instilled a confidence within me. Moreover they way of teaching, the lingo is quite intuitive. It felt like I was learning from a friend who was a tutor.'
+              testimonial='I used to score 7-pointer in my previous semesters. With each universities solutions available on the youtube channel of ninepointer, I easily got the previous years papers of my college solutions which helped me in my end-term exams finally got 8.6 CGPA this term.'
             />
           </div>
         </div>

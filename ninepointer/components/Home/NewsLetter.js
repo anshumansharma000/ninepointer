@@ -5,7 +5,7 @@ const NewsLetter = () => {
     <div className={styles.container}>
       <h2>Catch up on the latest updates from the Community</h2>
       <p style={{ color: 'grey', fontWeight: '600' }}>
-        Subscribe to our Newsletter ( We never spam our users )
+        Subscribe to our Newsletter, we never spam our users.
       </p>
       <div className={styles.action}>
         <input
