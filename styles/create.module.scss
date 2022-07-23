@@ -1,0 +1,52 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .image{
+        width: 300px;
+        img{
+            width: 100%;
+        }
+    }
+    h1, h3{
+        margin: 0.5rem;
+    }
+    .buttons{
+        display: flex;
+        gap: 2rem;
+    }
+
+    .testimonials{
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width:600px) {
+    .container{
+        .image{
+            width: 200px;
+        }
+
+        h1{
+            font-size: 1.5rem;
+            margin-bottom: 0rem;
+        }
+
+
+        p{
+            font-size: 0.85rem;
+        }
+
+        .testimonials{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .buttons{
+            gap: 1rem;
+        }
+    }
+}

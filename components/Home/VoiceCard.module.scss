@@ -1,0 +1,47 @@
+@import '../../styles/colors';
+
+.container{
+    padding-left: 4rem;
+    padding-right: 4rem;
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    .content{
+        p,h3{
+            margin: 0.3rem;
+        }
+        margin-top: -1rem;
+        flex: 3;
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .photo{
+        border-radius: 0.6rem;
+        flex: 2;
+        width: 100%;
+        max-width: 400px;
+        max-height: 300px;
+        min-width: 250px;
+        min-height: 200px;
+        overflow: hidden;
+        img{
+            border-radius: 0.6rem;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+@media(max-width:600px){
+    .container{
+        display: block;
+        padding-left: 0;
+        padding-right: 0;
+
+        .photo{
+            display: none;
+        }
+    }
+}

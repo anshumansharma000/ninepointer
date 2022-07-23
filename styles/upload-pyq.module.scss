@@ -1,0 +1,30 @@
+.container{
+    width: 60%;
+    margin: 0 auto;
+    min-height: 100vh;
+    label{
+        margin: 2px 0px;
+    }
+    section{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+
+        input, select{
+            padding: 6px 20px;
+            margin: 2px 0px;
+            font-size: 16px;
+            border: solid 2px rgb(219,219,219);
+            border-radius: 0.6rem;
+        }
+
+        input[type='submit']{
+            margin-top: 1rem;
+            padding: 1rem;
+            color: white;
+            background-color: green;
+            border: none;
+            border-radius: 0.6rem;
+        }
+    }
+}

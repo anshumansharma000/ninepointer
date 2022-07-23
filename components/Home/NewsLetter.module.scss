@@ -1,0 +1,61 @@
+@import '../../styles/colors';
+
+.container{
+    border: black 0px solid;
+    margin-bottom: 4rem;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: -2px -5px 32px 11px rgba(0,0,0,0.37);
+    -webkit-box-shadow: -2px -5px 32px 11px rgba(0,0,0,0.37);
+    -moz-box-shadow: -2px -5px 32px 11px rgba(0,0,0,0.37);
+    /* margin: auto; */
+}
+
+.container .action{
+    display: flex;
+    justify-content: space-between;
+}
+.container input{
+    border: none;
+    /* border-bottom: grey 1px solid; */
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.container input:focus{
+    outline: none;
+    border: none;
+    border-bottom: $secondary-color 2px solid;
+}
+
+.container button{
+    padding: 1.5rem;
+    color: white;
+    background-color: $primary-color;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1rem;
+}
+
+
+@media (max-width:600px) {
+    .container{
+        width: 100%;
+    }
+
+    .container input{
+        font-size: 1rem;
+    }
+
+    .container .action{
+        display: flex;
+        flex-direction: column;
+    }
+    .container button{
+        margin-top: 1rem;
+        padding: 1rem;
+    }
+}

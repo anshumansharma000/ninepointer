@@ -1,0 +1,23 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p{
+        margin: 0.8rem;
+    }
+    h2{
+        margin-bottom: 0.8rem;
+        margin-top: 0;
+    }
+    .image{
+        padding-top: 2rem ;
+        width: 40vw;
+        // height: 67vh;
+        
+        img{
+            width: 100%;
+        }
+    }
+
+}

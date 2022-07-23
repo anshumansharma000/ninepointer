@@ -1,0 +1,60 @@
+@import '../../styles/colors';
+
+.cardContainer{
+    display: flex;
+    // gap: 4rem;
+    justify-content: flex-start;
+    align-items: center;
+    height: 500px;
+}
+
+.textContainer{
+    padding-left: 48px;
+    display: flex;
+    flex-direction: column;
+    flex: 5;
+}
+
+.textContainer p{
+    width: 80%;
+    font-size: 18px;
+}
+
+.textContainer h2{
+    color: #0F172A;
+}
+
+
+.textContainer .actionButton{
+    margin-top: 32px;
+    width: 25%;
+    padding: 16px;
+    background-color: $primary-color;
+    border-radius: 8px;
+    border: none;
+    color: white;
+
+}
+
+.imageContainer{
+    flex: 3;
+    padding-right: 80px;
+    padding-left: 0px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+.imageContainer img{
+    width: 100%;
+}
+
+@media (max-width:600px) {
+    .cardContainer{
+        display: flex;
+        flex-direction: column;
+    }
+}

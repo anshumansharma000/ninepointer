@@ -1,0 +1,27 @@
+@import '../../styles/colors';
+.container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem;
+    
+    .imageContainer{
+        width: 70%;
+        height: 30%;
+        img{
+            width: 100%;
+        }
+    }
+
+    .textContainer{
+
+        .actionButton{
+            margin-top: 2rem;
+            width: 25%;
+            padding: 1rem;
+            background-color: $secondary-color;
+            border-radius: 0.5rem;
+            border: none;
+            color: white;
+        }
+    }
+}

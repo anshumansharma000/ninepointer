@@ -1,0 +1,107 @@
+.container{
+    display: flex;
+    // justify-content: space-between;
+    width: fit-content;
+    gap: 5rem;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+    // margin-left: auto;
+    // margin-right: auto;
+    background-color: #F5F5F5;
+    
+    form{
+        padding: 2rem;
+        .rowElements{
+            display: flex;
+            align-items: center;
+            gap: 2em;
+            // background-color: #F5F5F5;
+   
+          input { 
+                border: none;
+                border-bottom: 1px solid black;
+                margin-bottom: 1rem;
+                padding: 1rem;
+                background-color:#F5F5F5;
+                 &:focus{
+                     outline: none;
+                     border-bottom: 2px solid black;
+                 }
+            }
+           
+           
+        }
+        .rowElements2{
+            input { 
+                border: none;
+                border-bottom:  1px solid black;
+             width: 100%;
+                
+                margin-bottom: 1rem;
+                padding: 1rem;
+                background-color:#F5F5F5;
+                 &:focus{
+                     outline: none;
+                     border-bottom: 2px solid black;
+                 }
+            }
+        }
+        
+        input[type='submit']
+        {
+            background: #323639;
+            border-radius: 0.6rem;
+            cursor: pointer;
+            color: white;
+            padding: 0.5rem;
+            background-color: 
+            #323639;
+            width: 100px;
+            height: 35px;
+            float: right;
+            border: none;
+            font-weight: 600;
+            font-size: 20px;
+            &:hover {
+                 background-color: #324339;
+            }
+        }
+    }
+ .contactInfo{
+    background-color: 
+    #CACACA;
+    width: 300px;
+    
+    padding: 2rem;
+    .contactIcons{
+        display: flex;
+        gap: 2em;
+        p{
+            margin: 0;
+            gap: 2em;
+        }
+        .callicon{
+            display: flex;
+            justify-content: space-between;
+            gap: 2em;
+        }
+        .mailicon{display: flex;
+            justify-content: space-between;}   
+        
+    
+        align-items: flex-start;
+        a{text-decoration: none;}
+
+        
+    }
+    .socialIcons{
+        display: flex;
+        gap: 1em;
+        size: 2in;
+         
+    }
+
+    
+
+    }
+ }

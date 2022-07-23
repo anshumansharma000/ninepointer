@@ -1,0 +1,47 @@
+@import '../../styles/colors';
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    // border: 1px solid black;
+    border-radius: 0.6rem;
+    width: 100%;
+    margin-bottom: 2rem;
+    margin-left:auto;
+    margin-right: auto;
+    box-shadow: 0px 0px 10.4752px rgba(0, 0, 0, 0.5);
+    .info{
+        display: flex;
+        justify-content: space-between;
+    }
+    .chips{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+    .action{
+        margin-top: 1rem;
+        display: flex;
+        justify-content: flex-end;
+        button{
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 0.4rem;
+            background-color: $primary-color;
+            color: white;
+            // margin: auto;
+        }
+        .secondaryBtn{
+            background-color: #fafafa;
+            color: black;
+        }
+        .otherBtn{
+            background-color: $primary-blue ;
+            margin-right: 0.5rem;
+        }
+    }
+
+}
