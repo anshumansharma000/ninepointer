@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\js-basics"
+		},
+		{
+			"path": "..\\.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "js-basics",
+		"git.ignoreLimitWarning": true
+	}
+}

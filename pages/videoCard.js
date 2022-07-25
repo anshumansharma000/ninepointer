@@ -12,7 +12,7 @@ const vdo = () => {
         link='https://drive.google.com/file/d/16su5NEKPbQFqO0OT0EyTkigKDiXpLKDg/view?usp=sharing'
       />
       <VideoCard
-        img_src='https://placeit.net/c/design-templates/stages/youtube-thumbnail-maker-tips-to-survive-the-back-to-school-season-4796e'
+        img_src='https://docs.google.com/spreadsheets/d/1gnh-XWTY3bDJPfgMpqYvg0CXlNO4LAmPLrtd5PTWnXY/edit?usp=sharing'
         cardTitle=' Learn Web Development'
         cardDescription='this video enables you to learn web dev from grass root level and gradually touch the skies.'
         cardAuthor='apple'
@@ -24,6 +24,5 @@ const vdo = () => {
 
 // should be added 
 // should be 
-// asdfghj
-// sdfghjkl
+
 export default vdo;

@@ -20,12 +20,11 @@
           input { 
                 border: none;
                 border-bottom: 1px solid black;
-                margin-bottom: 1rem;
+                margin-bottom: 1px;
                 padding: 1rem;
                 background-color:#F5F5F5;
                  &:focus{
                      outline: none;
-                     border-bottom: 2px solid black;
                  }
             }
            
@@ -37,12 +36,11 @@
                 border-bottom:  1px solid black;
              width: 100%;
                 
-                margin-bottom: 1rem;
+                margin-bottom: 1px;
                 padding: 1rem;
                 background-color:#F5F5F5;
                  &:focus{
                      outline: none;
-                     border-bottom: 2px solid black;
                  }
             }
         }
@@ -50,20 +48,21 @@
         input[type='submit']
         {
             background: #323639;
-            border-radius: 0.6rem;
-            cursor: pointer;
+            border-radius: 16.6667px;
             color: white;
-            padding: 0.5rem;
             background-color: 
             #323639;
             width: 100px;
             height: 35px;
             float: right;
             border: none;
+            
+            font-family: 'Poppins';
+            font-style: normal;
             font-weight: 600;
             font-size: 20px;
             &:hover {
-                 background-color: #324339;
+                 color: #000000;
             }
         }
     }
@@ -97,7 +96,6 @@
     .socialIcons{
         display: flex;
         gap: 1em;
-        size: 2in;
          
     }
 

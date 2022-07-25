@@ -21,7 +21,7 @@ const VideoCard = (props) => {
                 <br />
                 <br/>
                 <br/>
-                <div className={styles.button}> Watch now </div>
+                <div className={styles.button}><span> Watch now</span> </div>
         
               </a>
               <br/>
