@@ -44,10 +44,11 @@ export default function About() {
         <div className={styles.whatWeDo}>
           <h1>What do we do?</h1>
           <p>
-            We provide a platform for ninepointers and other students where ninepointers create  course content on the
-            topics they have deeper understanding with and other students consume their
-            high quality course content. ninepointers are the students from India's top colleges like IITs,
-            NITs, BITS and other top colleges.
+            We provide a platform for ninepointers and other students where
+            ninepointers create course content on the topics they have deeper
+            understanding with and other students consume their high quality
+            course content. ninepointers are the students from India's top
+            colleges like IITs, NITs, BITS and other top colleges.
           </p>
           <div className={styles.featureCards}>
             <FeatureCard
@@ -78,19 +79,19 @@ export default function About() {
           </div>
           <div className={styles.team}>
             <TeamCard
-              name='Prateek Pawan'
-              role='Co-founder'
-              description='Founded successful food startups like Maa Bhook Lagi, Birinz, Paratha Experiment. NIT Rourkela alumni.'
-              twitter='https://www.twitter.com/prateekpawan'
-              photo='/assets/images/cofounder_prateek.jpg'
-            />
-            <TeamCard
               name='Kush Beejal'
               role='Co-founder'
               description='Founder and Ex- CEO of NeoStencil, Ex-VP Unacademy, IIT Bombay and IIM Calcutta alumni.'
               twitter='https://twitter.com/kushbeejal'
               linkedIn='https://in.linkedin.com/in/kushbeejal'
               photo='/assets/images/cofounder_kush.jpg'
+            />
+            <TeamCard
+              name='Prateek Pawan'
+              role='Co-founder'
+              description='Founded successful food startups like Maa Bhook Lagi, Birinz, Paratha Experiment. NIT Rourkela alumni.'
+              twitter='https://www.twitter.com/prateekpawan'
+              photo='/assets/images/cofounder_prateek.jpg'
             />
           </div>
         </div>
