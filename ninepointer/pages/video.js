@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const video = () => {
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState();
   useEffect(() => {
     //fetch data here
     const fetchData = async () => {
@@ -14,7 +14,6 @@ const video = () => {
       const res = await axios.get(
         `https://ninepointer-staging.herokuapp.com/api/v1/engineering/video`
       );
-      console.log(res.data.data);
       setData(res.data.data);
       setLoading(false);
     };
