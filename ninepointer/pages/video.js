@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const video = () => {
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
   useEffect(() => {
     //fetch data here
     const fetchData = async () => {
@@ -24,7 +24,7 @@ const video = () => {
   return (
     <>
       <h1>Videos</h1>
-      {/* {loading && <h2>Loading...</h2>} */}
+      {loading && <h2>Loading...</h2>}
       <div>
         {data?.map((item, index) => {
           return (
