@@ -82,7 +82,7 @@ export const Navbar = () => {
           </li>
           <li>
             <div className={navStyles.highlight}>
-              <Link href='/contactus'>Contact</Link>
+              <Link href='/contact'>Contact</Link>
             </div>
           </li>
         </ul>
