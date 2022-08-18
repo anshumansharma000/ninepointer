@@ -13,13 +13,13 @@ const vdo = () => {
       const response = await axios.get(
         `https://ninepointer-staging.herokuapp.com/api/v1/engineering/video`
       );
-      console.log(res.data.data);
+      console.log(response.data.data);
       setData(response.data.data);
       setLoading(false);
     };
     fetchData();
   }, []);
-
+data?.map((item, index) => {
   return (
     <>
       <VideoCard
@@ -38,9 +38,12 @@ const vdo = () => {
       />
     </>
   );
+})
 };
+
 
 // should be added 
 // should be done
+//XD
 
 export default vdo;
