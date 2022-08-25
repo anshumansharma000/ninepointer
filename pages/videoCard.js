@@ -20,16 +20,31 @@ const vdo = () => {
     fetchData();
   }, []);
 data?.map((item, index) => {
+
   return (
     <>
       <VideoCard
+      // {data.map(item => ({item.name}))
+      // img_src={item.thumbnail}
+      // cardTitle={item.title}
+      // cardDescription={item.description}
+      // cardAuthor={item.author}
+      // link={item.link}
         img_src='https://images.pexels.com/photos/1987151/pexels-photo-1987151.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'
         cardTitle=' Learn Web Development'
         cardDescription='this video enables you to learn web dev from grass root level and gradually touch the skies.'
         cardAuthor='apple'
         link='https://drive.google.com/file/d/16su5NEKPbQFqO0OT0EyTkigKDiXpLKDg/view?usp=sharing'
+      
       />
+
       <VideoCard
+      // {data.map(item => ({item.name}))
+      // img_src={item.thumbnail}
+      // cardTitle={item.title}
+      // cardDescription={item.description}
+      // cardAuthor={item.author}
+      // link={item.link}
         img_src='https://images.pexels.com/photos/1987151/pexels-photo-1987151.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'
         cardTitle=' Learn Web Development'
         cardDescription='this video enables you to learn web dev from grass root level and gradually touch the skies.'

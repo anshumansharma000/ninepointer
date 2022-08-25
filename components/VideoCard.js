@@ -11,7 +11,7 @@ const VideoCard = (props) => {
   return (
     <>
       <div className={styles.videoCards}>
-        <div className={styles.videoCard}>
+        <div className={styles.videoCard}> 
           <div className={styles.thumbnail}>
           <a href={props.link} target='_blank'>
           <div className={styles.thumbnailWrapper}><img  src={props.img_src} className={styles.cardThumbnail} /> 
@@ -34,7 +34,7 @@ const VideoCard = (props) => {
                 <br/>
                 <br/>
                 <div className={styles.button}><span> Watch now</span> </div>
-        
+        {/* <div className = {item.props} ></div> */}
               </a>
               <br/>
             </div>{' '}
