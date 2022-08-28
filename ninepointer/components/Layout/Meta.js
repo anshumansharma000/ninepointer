@@ -22,7 +22,7 @@ const Meta = ({ title, keywords, description, children }) => {
       <link
         rel='icon'
         type='image/x-icon'
-        href='assets/images/channels4_profile-removebg-preview.png'
+        href='/assets/svg-assets/channels4_profile-removebg-preview.png'
       />
       <title>{title}</title>
     </Head>

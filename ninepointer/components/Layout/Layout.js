@@ -27,7 +27,6 @@ const Layout = ({ children }) => {
         <div className={styles.container}>
           <main>{children}</main>
         </div>
-        <Footer />
       </>
     );
   }

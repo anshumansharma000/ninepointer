@@ -1,0 +1,9 @@
+.container{
+    margin: 0 -4rem;
+    .sections{
+        display: flex;
+        .pageContent{
+            flex: 4;
+        }
+    }
+}
