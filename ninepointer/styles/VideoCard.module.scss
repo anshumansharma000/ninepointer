@@ -1,33 +1,34 @@
 .videoCard
 {
     display: flex;
-     justify-content: center;
+    justify-content: center;
     width: fit-content;
-    gap: 5rem;
+    gap:3rem;
     margin-bottom: 4rem;
     margin-top: 2rem;
     margin-left: auto;
     margin-right: auto;
     background-color: white;
-    padding : 0.5em,1.5rem ;
-    box-sizing: border-box;
+    // padding : 0.5em 1.5rem ;
+    // box-sizing: border-box;
     box-shadow: 
 		0px 0px 10.4752px rgba(0,0,0,0.5);
     .thumbnail{
-        display: block;
-  width: 100px;
-  height: 250px;
- 
+        // width: 250px;
+        // height: 150px;
+        img{
+          width: 100%;
+          height: 100%;
+        }
 }
 .reference {
-    white-space: nowrap;
-  width: 800px;
-  height:250px;
-  font-family: 'Roboto', sans-serif;
+  // white-space: nowrap;
+  // width: 800px;
+  // height:250px;
+  // font-family: 'Roboto', sans-serif;
   // border: 1px solid #000000;
-  overflow: hidden;
-  text-overflow: clip;
-  
+  // overflow: hidden;
+  // text-overflow: clip;
 justify-content: center;
 background-color: whitesmoke;
 padding: 1 rem, 1.5 rem;
@@ -42,11 +43,9 @@ padding-left: 1em;
 .button{
   span {
     display: inline-block;
-    
     text-align: center;
     line-height: 1em;
-    
-padding: 0px;
+    padding: 0px;
    
 }
   position: relative;
@@ -57,19 +56,19 @@ padding: 0px;
   padding: 5px 5px;
 
   color: black;
-  font-family: poppins;
-  font-size: 20px;
+  // font-family: poppins;
+  // font-size: 20px;
   text-align: left;
   text-orientation: upright;
 
   font-weight: 100;
-  border: 5px solid black;
+  border: 2px solid black;
   text-transform: uppercase;
   letter-spacing: .5px;
   cursor: pointer;
   border-radius:20px;
-  transition: 1.5s;
-  &:hover{box-shadow: 0 5px 50px 0  darkslategrey inset, 0 5px 50px 0 darkslategrey, 0 5px 50px 0 darkslategrey inset, 0 5px 50px 0 darkslategrey;}
+  // transition: 1.5s;
+  // &:hover{box-shadow: 0 5px 50px 0  darkslategrey inset, 0 5px 50px 0 darkslategrey, 0 5px 50px 0 darkslategrey inset, 0 5px 50px 0 darkslategrey;}
   
 }
 }
