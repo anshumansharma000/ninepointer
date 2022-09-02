@@ -67,72 +67,87 @@ const video = () => {
         <div className={styles.filters}>
           <h1>Filters</h1>
           <div className={styles.filterBox}>
-            {branch && <h2>Branch: {branch}</h2>}
-            <input
-              type='checkbox'
-              name='Mechanical'
-              id='Mechanical'
-              className='branch'
-              onChange={branchChange}
-            />
-            <label for='Mechanical'>Mechanical</label>
-            <br />
-            <input
-              type='checkbox'
-              name='Computer Science'
-              id='Computer Science'
-              className='branch'
-              onChange={branchChange}
-            />
-            <label for='Computer Science'>Computer Science</label>
-            <br />
-            <input
-              type='checkbox'
-              name='Electrical'
-              id='Electrical'
-              className='branch'
-              onChange={branchChange}
-            />
-            <label for='Electrical'>Electrical</label>
-            <br />
+            <h2>Branch</h2>
+            <div className={styles.filter}>
+              <input
+                type='checkbox'
+                name='Mechanical'
+                id='Mechanical'
+                className='branch'
+                onChange={branchChange}
+              />
+              <label htmlFor='Mechanical'>Mechanical</label>
+              <br />
+            </div>
+            <div className={styles.filter}>
+              <input
+                type='checkbox'
+                name='Computer Science'
+                id='Computer Science'
+                className='branch'
+                onChange={branchChange}
+              />
+              <label htmlFor='Computer Science'>Computer Science</label>
+              <br />
+            </div>
+            <div className={styles.filter}>
+              <input
+                type='checkbox'
+                name='Electrical'
+                id='Electrical'
+                className='branch'
+                onChange={branchChange}
+              />
+              <label htmlFor='Electrical'>Electrical</label>
+              <br />
+            </div>
           </div>
           <div className={styles.filterBox}>
-            {type && <h2>Type: {type}</h2>}
-            <input
-              type='checkbox'
-              name='Topic Video'
-              id='Topic Video'
-              className='type'
-              onChange={branchChange}
-            />
-            <label for='Topic Video'>Topic Video</label>
-            <br />
-            <input
-              type='checkbox'
-              name='Engineering Life'
-              id='Engineering Life'
-              className='type'
-              onChange={branchChange}
-            />
-            <label for='Engineering Life'>Engineering Life</label>
-            <br />
-            <input
-              type='checkbox'
-              name='Solution Video'
-              id='Solution Video'
-              className='type'
-              onChange={branchChange}
-            />
-            <label for='Solution Video'>Solution Video</label>
-            <input
-              type='checkbox'
-              name='Others'
-              id='Others'
-              className='type'
-              onChange={branchChange}
-            />
-            <label for='Others'>Others</label>
-            <br />
+            {type && <h2>Type{type}</h2>}
+            <div className={styles.filter}>
+              <input
+                type='checkbox'
+                name='Topic Video'
+                id='Topic Video'
+                className='type'
+                onChange={branchChange}
+              />
+              <label htmlFor='Topic Video'>Topic Video</label>
+              <br />
+            </div>
+            <div className={styles.filter}>
+              <input
+                type='checkbox'
+                name='Engineering Life'
+                id='Engineering Life'
+                className='type'
+                onChange={branchChange}
+              />
+              <label htmlFor='Engineering Life'>Engineering Life</label>
+              <br />
+            </div>
+            <div className={styles.filter}>
+              <input
+                type='checkbox'
+                name='Solution Video'
+                id='Solution Video'
+                className='type'
+                onChange={branchChange}
+              />
+              <label htmlFor='Solution Video'>Solution Video</label>
+              <br />
+            </div>
+            <div className={styles.filter}>
+              <input
+                type='checkbox'
+                name='Others'
+                id='Others'
+                className='type'
+                onChange={branchChange}
+              />
+              <label htmlFor='Others'>Others</label>
+              <br />
+            </div>
           </div>
         </div>
         <div className={styles.videos}>
@@ -146,7 +161,7 @@ const video = () => {
                   img_src={item.thumbnail}
                   cardTitle={item.title}
                   cardDescription={item.description}
-                  cardAuthor='apple'
+                  cardAuthor={item.creator}
                   link={item.videoLink}
                 />
               );

@@ -1,9 +1,27 @@
-.container{
-    display: flex;
-    .filters{
-        
+.container {
+  position: relative;
+  display: flex;
+  gap: 2rem;
+  min-height: 100vh;
+  .filters {
+    position: sticky;
+    top: 4rem;
+    flex: 1;
+    height: fit-content;
+    .filterBox {
+      .filter {
+        font-size: 0.9rem;
+        margin-bottom: 0.3rem;
+        display: flex;
+        align-items: flex-start;
+        input {
+          margin-right: 0.7rem;
+        }
+      }
     }
-    .videos{
-        display: block;
-    }
+  }
+  .videos {
+    flex: 5;
+    display: block;
+  }
 }
