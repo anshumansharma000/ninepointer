@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/videoCard.module.scss';
+import styles from './VideoCard.module.scss';
 import { FaPlay } from 'react-icons/fa';
 
 const VideoCard = (props) => {

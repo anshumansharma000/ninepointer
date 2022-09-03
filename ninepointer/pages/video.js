@@ -1,7 +1,8 @@
-import VideoCard from '../components/VideoCard';
+import VideoCard from '../components/Video/VideoCard';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from '../styles/video.module.scss';
+import Search from '../components/Search';
 
 const video = () => {
   const [loading, setLoading] = useState(false);
@@ -50,17 +51,6 @@ const video = () => {
     }
   };
 
-  const fetchVideos = async () => {
-    setLoading(true);
-    console.log(query);
-    const res = await axios.get(
-      `https://ninepointer-staging.herokuapp.com/api/v1/engineering/video/${query}`
-    );
-    setData(res.data.data);
-    console.log(res.data.data);
-    setLoading(false);
-  };
-
   return (
     <>
       <div className={styles.container}>
@@ -74,6 +64,7 @@ const video = () => {
                 name='Mechanical'
                 id='Mechanical'
                 className='branch'
+                value={branch.includes('mechanical')}
                 onChange={branchChange}
               />
               <label htmlFor='Mechanical'>Mechanical</label>
@@ -151,7 +142,7 @@ const video = () => {
           </div>
         </div>
         <div className={styles.videos}>
-          <h1>Videos</h1>
+          <Search setData={setData} setLoading={setLoading} />
           {loading && <h2>Loading...</h2>}
           <div>
             {data?.map((item, index) => {

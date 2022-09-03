@@ -1,0 +1,24 @@
+@import '../styles/colors';
+.container {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  //   border: 1px solid;
+  background-color: #f3f3eb;
+  border-radius: 0.4rem;
+  input {
+    padding: 0.7rem;
+    width: max-content;
+    border: none;
+    width: 85%;
+    outline: none;
+    background-color: #f3f3eb;
+    border-radius: 0.4rem;
+  }
+  button {
+    border: none;
+    background-color: inherit;
+    padding-right: 1rem;
+  }
+}
