@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SideBar from '../../../../components/Admin/Panel/SideBar';
 import TopBar from '../../../../components/Admin/Panel/TopBar';
-import styles from './upload.module.scss';
+import styles from './videos.module.scss';
 import { universities } from '../../../../data/universities';
 import { useRouter } from 'next/router';
 import Message from '../../../../components/Messge';
@@ -15,39 +15,33 @@ import { useContext } from 'react';
 
 const id = () => {
   const router = useRouter();
-  const { sideBarPage, setSideBarPage } = useContext(SideBarPageContext);
   const [message, setMessage] = useState('');
   const [formData, setFormData] = useState({
     // user_id: cookies.UserId,
     branch: '',
     semester: '',
-    year: '',
-    subject: '',
-    university: '',
-    author: '',
     type: '',
-    url: '',
-    fileLink: '',
-    solutionLink: '',
+    subject: '',
+    title: '',
+    creator: '',
+    videoLink: '',
+    description: '',
     // file: '',
   });
   const [file, setFile] = useState('');
-
+  const { sideBarPage, setSideBarPage } = useContext(SideBarPageContext);
   useEffect(() => {
     if (!router.isReady) return;
-    if (sideBarPage !== 'pyqs') {
-      setSideBarPage('pyqs');
+    if (sideBarPage !== 'videos') {
+      setSideBarPage('videos');
     }
-  }, [router.isReady, router.pathname]);
 
-  useEffect(() => {
-    if (!router.isReady) return;
     const fetchData = async () => {
       console.log(
         router.asPath.split('/')[router.asPath.split('/').length - 1]
       );
       const res = await axios.get(
-        `https://ninepointer-staging.herokuapp.com/api/v1/engineering/pyq/${
+        `https://ninepointer-staging.herokuapp.com/api/v1/engineering/video/${
           router.asPath.split('/')[router.asPath.split('/').length - 1]
         }`
       );
@@ -56,24 +50,33 @@ const id = () => {
         branch: res.data.data.branch[0],
         semester: res.data.data.semester,
         subject: res.data.data.subject,
-        year: res.data.data.year,
         type: res.data.data.type,
-        university: res.data.data.university,
-        author: res.data.data.author,
-        url: res.data.data.fileLink,
+        title: res.data.data.title,
+        creator: res.data.data.creator,
+        videoLink: res.data.data.videoLink,
+        description: res.data.data.description,
       });
     };
     try {
       fetchData();
     } catch (err) {
-      setMessage(err.response.data.error);
+      if (err.response.status === 500) {
+        console.log('Something went wrong');
+        setMessage('There was a problem with the server');
+      } else if (err.response.status === 400) {
+        console.log(err.response.data.error);
+        setMessage(err.response.data.error);
+      } else {
+        console.log(err.response.data.error);
+        setMessage(err.response.data.error);
+      }
     }
-  }, [router.isReady]);
+  }, [router.isReady, router.pathname]);
 
   const updateData = async () => {
     try {
       const res = await axios.patch(
-        `https://ninepointer-staging.herokuapp.com/api/v1/engineering/pyq/${
+        `https://ninepointer-staging.herokuapp.com/api/v1/engineering/video/${
           router.asPath.split('/')[router.asPath.split('/').length - 1]
         }`,
         formData
@@ -91,46 +94,10 @@ const id = () => {
       }
     }
   };
-  const firebaseUpload = async () => {
-    if (!file) return;
-    try {
-      const storageRef = ref(
-        storage,
-        `/pyqs/${file.name}-${formData.subject}-${formData.year}-${formData.semester}`
-      );
-      const taskSnapshot = await uploadBytes(storageRef, file);
-      const url = await getDownloadURL(taskSnapshot.ref);
-      console.log(url);
-      setFormData((prevState) => ({
-        ...prevState,
-        url,
-      }));
-      const res = await axios.patch(
-        `https://ninepointer-staging.herokuapp.com/api/v1/engineering/pyq/${
-          router.asPath.split('/')[router.asPath.split('/').length - 1]
-        }`,
-        { ...formData, url }
-      );
-    } catch (error) {
-      if (err.response.status === 500) {
-        console.log('Something went wrong');
-        setMessage('There was a problem with the server');
-      } else if (err.response.status === 400) {
-        console.log(err.response.data.error);
-        setMessage(err.response.data.error);
-      } else {
-        console.log(err.response.data.error);
-        setMessage(err.response.data.error);
-      }
-    }
-  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (file) {
-      firebaseUpload();
-    } else {
-      updateData();
-    }
+    updateData();
   };
 
   const handleChange = (e) => {
@@ -156,29 +123,12 @@ const id = () => {
         <div className={styles.sections}>
           <SideBar />
           <div className={styles.pageContent}>
-            {formData.subject && (
+            {formData.videoLink && (
               <div className={styles.containers}>
-                <h1>Edit PYQ</h1>
+                <h1>Edit Video</h1>
                 {message && <Message />}
                 <form onSubmit={handleSubmit}>
                   <section>
-                    <label htmlFor='university'>University</label>
-                    <select name='university' onChange={handleChange}>
-                      <option value='' disabled>
-                        Select your option
-                      </option>
-                      {universities.map((university, index) => {
-                        return (
-                          <option
-                            key={index}
-                            value={university.name}
-                            selected={formData.university == university.name}
-                          >
-                            {university.name}
-                          </option>
-                        );
-                      })}
-                    </select>
                     <label htmlFor='branch'>Branch</label>
                     <select name='branch' id='branch' onChange={handleChange}>
                       <option value='' disabled selected>
@@ -192,7 +142,7 @@ const id = () => {
                       </option>
                       <option
                         value='Computer Science'
-                        selected={formData.branch == 'Common'}
+                        selected={formData.branch == 'Computer Science'}
                       >
                         Computer Science
                       </option>
@@ -287,46 +237,68 @@ const id = () => {
                       </option>
                     </select>
 
-                    <label htmlFor='year'>Year</label>
+                    <label htmlFor='title'>Title</label>
                     <input
-                      type='year'
-                      name='year'
-                      id='year'
-                      placeholder='Year'
-                      required={true}
-                      value={formData.year}
+                      contentEditable={true}
+                      type='text'
+                      name='title'
+                      id='title'
+                      placeholder='title'
+                      value={formData.title}
                       onChange={handleChange}
                     />
+                    <label htmlFor='description'>Description</label>
+                    {/* <input
+                      type='textArea'
+                      name='description'
+                      id='description'
+                      placeholder='Description'
+                      value={formData.description}
+                      onChange={handleChange}
+                    /> */}
+                    <textarea
+                      name='description'
+                      id='description'
+                      cols='20'
+                      rows='8'
+                      value={formData.description}
+                      onChange={handleChange}
+                    ></textarea>
                     <label htmlFor='subject'>Subject</label>
                     <input
                       type='text'
                       name='subject'
                       id='subject'
                       placeholder='Subject'
-                      required={true}
                       value={formData.subject}
                       onChange={handleChange}
                     />
-                    <label htmlFor='type'>Question Type</label>
+                    <label htmlFor='type'>Video Type</label>
                     <select name='type' onChange={handleChange}>
                       <option value='' disabled>
                         Select your option
                       </option>
                       <option
-                        value='Regular'
-                        selected={formData.branch == 'Regular'}
+                        value='Topic Video'
+                        selected={formData.type == 'Topic Video'}
                       >
-                        Regular
+                        Topic Video
                       </option>
-                      <option value='Back' selected={formData.branch == 'Back'}>
-                        Back
+                      <option
+                        value='Solution Video'
+                        selected={formData.type == 'Solution Video'}
+                      >
+                        Solution Video
                       </option>
-                      <option value='Both' selected={formData.branch == 'Both'}>
-                        Both
+                      <option
+                        value='Engineering Life'
+                        selected={formData.type == 'Engineering Life'}
+                      >
+                        Engineering Life
                       </option>
                       <option
                         value='Others'
-                        selected={formData.branch == 'Others'}
+                        selected={formData.type == 'Others'}
                       >
                         Others
                       </option>
@@ -341,22 +313,15 @@ const id = () => {
               value={formData.university}
               onChange={handleChange}
             /> */}
-                    <label htmlFor='Author'>Author</label>
+                    <label htmlFor='creator'>Creator</label>
                     <input
                       type='text'
-                      name='author'
-                      id='author'
-                      placeholder='Author'
+                      name='creator'
+                      id='creator'
+                      placeholder='Creator'
                       required={false}
-                      value={formData.author}
+                      value={formData.creator}
                       onChange={handleChange}
-                    />
-                    <label htmlFor='file'>Choose File</label>
-                    <input
-                      type='file'
-                      name='file'
-                      onChange={onChange}
-                      value={file}
                     />
                     {/* <label htmlFor='branch'>Branch</label> */}
                     {/* <input
@@ -369,22 +334,13 @@ const id = () => {
             onChange={handleChange}
           /> */}
                     {/* {uploadPercent != 0 && <Progress percentage={uploadPercent} />} */}
-                    <label htmlFor='url'>Add external file link</label>
+                    <label htmlFor='videoLink'>videoLink</label>
                     <input
-                      type='url'
-                      name='url'
-                      id='url'
-                      placeholder='Add link to file'
-                      value={formData.url}
-                      onChange={handleChange}
-                    />
-                    <label htmlFor='solutionLink'>Add solution link</label>
-                    <input
-                      type='solutionLink'
-                      name='solutionLink'
-                      id='solutionLink'
-                      placeholder='Add solution Link'
-                      value={formData.solutionLink}
+                      type='text'
+                      name='videoLink'
+                      id='videoLink'
+                      placeholder='Video Link'
+                      value={formData.videoLink}
                       onChange={handleChange}
                     />
                     <input type='submit' />

@@ -1,8 +1,16 @@
 import React from 'react';
 import styles from './TopBar.module.scss';
-import { NotificationsNone, Settings } from '@mui/icons-material';
+import { NotificationsNone, Settings, Logout } from '@mui/icons-material';
+import { useRouter } from 'next/router';
 
 const TopBar = () => {
+  const router = useRouter();
+  const logOut = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('role');
+    router.replace('/');
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.left}>
@@ -14,6 +22,9 @@ const TopBar = () => {
         <div className={styles.topBarIcons}>
           <div className={styles.topBarIcon}>
             <NotificationsNone />
+          </div>
+          <div className={styles.topBarIcon}>
+            <Logout onClick={logOut} />
           </div>
           <div className={styles.topBarIcon}>
             <Settings />

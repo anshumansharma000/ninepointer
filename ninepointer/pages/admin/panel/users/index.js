@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SideBar from '../../../../components/Admin/Panel/SideBar';
 import TopBar from '../../../../components/Admin/Panel/TopBar';
-import styles from './pyqs.module.scss';
+import styles from './users.module.scss';
 import { DataGrid } from '@mui/x-data-grid';
 import axios from 'axios';
 import Link from 'next/link';
@@ -11,13 +11,13 @@ import { useContext } from 'react';
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'university', headerName: 'University', width: 130 },
-  { field: 'subject', headerName: 'Subject', width: 130 },
-  { field: 'semester', headerName: 'Semester', width: 130 },
-  { field: 'branch', headerName: 'Branch', width: 130 },
+  { field: 'name', headerName: 'Name', width: 130 },
+  { field: 'email', headerName: 'Email', width: 130 },
+  { field: 'username', headerName: 'Username', width: 130 },
+  { field: 'role', headerName: 'Role', width: 130 },
   {
-    field: 'year',
-    headerName: 'Year',
+    field: 'phone',
+    headerName: 'Phone',
     width: 90,
   },
   {
@@ -30,7 +30,7 @@ const columns = [
           {/* <Link href={`pyqs/${params.row.id}`}> */}
           <Link
             href={{
-              pathname: `pyqs/${params.row.id}`,
+              pathname: `users/${params.row.id}`,
             }}
           >
             <button className={styles.btn}>Edit</button>
@@ -63,32 +63,32 @@ const rows = [
   { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
 ];
 
-const pyqs = () => {
-  const { sideBarPage, setSideBarPage } = useContext(SideBarPageContext);
-
+const users = () => {
   const [columnData, setcolumnData] = useState();
-  const [pyqData, setPyqData] = useState();
+  const [usersData, setUsersData] = useState();
   const Router = useRouter();
+  const { sideBarPage, setSideBarPage } = useContext(SideBarPageContext);
   useEffect(() => {
-    const fetchPyqs = async () => {
+    if (!Router.isReady) return;
+    if (sideBarPage !== 'users') {
+      setSideBarPage('users');
+    }
+    const fetchUsers = async () => {
       const res = await axios.get(
-        'https://ninepointer-staging.herokuapp.com/api/v1/engineering/pyq?limit=300'
+        'http://localhost:8000/api/v1/engineering/user?limit=300',
+        {
+          headers: {
+            authorization: 'Bearer ' + localStorage.getItem('token'),
+          },
+        }
       );
       console.log('fetching');
-      setPyqData(res.data.data);
+      setUsersData(res.data.data);
       console.log(res.data.data);
       console.log(Object.keys(res.data.data[0]));
     };
-    fetchPyqs();
-  }, []);
-
-  useEffect(() => {
-    if (!Router.isReady) return;
-    if (sideBarPage !== 'pyqs') {
-      setSideBarPage('pyqs');
-    }
+    fetchUsers();
   }, [Router.isReady, Router.pathname]);
-
   return (
     <>
       <div className={styles.container}>
@@ -99,24 +99,24 @@ const pyqs = () => {
             <div className={styles.actionButtons}>
               <button
                 onClick={() => {
-                  Router.push('/admin/panel/pyqs/upload');
+                  Router.push('/admin/panel/users/upload');
                 }}
               >
-                Add a PYQ
+                Add an User
               </button>
             </div>
             <div style={{ height: 500, width: '100%' }}>
-              {pyqData && (
+              {usersData && (
                 <DataGrid
                   disableSelectionOnClick
-                  rows={pyqData.map((item, index) => {
+                  rows={usersData.map((item, index) => {
                     return {
                       id: item._id,
-                      university: item.university,
-                      subject: item.subject,
-                      semester: item.semester,
-                      branch: item.branch,
-                      year: item.year,
+                      name: item.name,
+                      username: item.username,
+                      email: item.email,
+                      role: item.role,
+                      phone: item.phone,
                     };
                   })}
                   columns={columns}
@@ -133,4 +133,4 @@ const pyqs = () => {
   );
 };
 
-export default pyqs;
+export default users;

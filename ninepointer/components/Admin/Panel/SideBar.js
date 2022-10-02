@@ -12,7 +12,7 @@ const SideBar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.sideBarMenu}>
-        <h3 className={styles.sideBarTitle}>Dashboard</h3>
+        <h3 className={styles.sideBarTitle}>{sideBarPage}</h3>
         <ul className={styles.sideBarList}>
           <Link href='/admin/panel/dashboard'>
             <li
@@ -53,7 +53,7 @@ const SideBar = () => {
           <Link href='/admin/panel/users'>
             <li
               className={
-                setSideBarPage == 'users'
+                sideBarPage == 'users'
                   ? `${styles.sideBarListItem} ${styles.active}`
                   : styles.sideBarListItem
               }
