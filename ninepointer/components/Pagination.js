@@ -21,8 +21,13 @@ const Pagination = ({ totalPages, setQuery, currentPage, setCurrentPage }) => {
   return (
     <div className={styles.container}>
       <button
+        disabled={currentPage == 1}
         onClick={() => {
           setCurrentPage((prevState) => prevState - 1);
+          router.push({
+            pathname: '/video',
+            query: { page: currentPage - 1 },
+          });
         }}
       >
         Previous
@@ -30,19 +35,62 @@ const Pagination = ({ totalPages, setQuery, currentPage, setCurrentPage }) => {
       <div className={styles.pages}>
         {totalPages < 5 ? (
           [...Array(totalPages)].map((element, index) => {
-            return <div key={index}>{index + 1}</div>;
+            return (
+              <div
+                className={
+                  index == currentPage - 1
+                    ? `${styles.pageNumber} ${styles.current}`
+                    : styles.pageNumber
+                }
+                key={index}
+                onClick={() => {
+                  setCurrentPage(index + 1);
+                  router.push({
+                    pathname: '/video',
+                    query: { page: index + 1 },
+                  });
+                }}
+              >
+                {index + 1}
+              </div>
+            );
           })
         ) : (
           <div>
             <span>...</span>
-            <span>{currentPage - 1}</span>
-            <span>{currentPage}</span>
-            <span>{currentPage + 1}</span>
+            <span
+              className={
+                index == currentPage - 1
+                  ? `${styles.pageNumber} ${styles.current}`
+                  : styles.pageNumber
+              }
+            >
+              {currentPage - 1}
+            </span>
+            <span
+              className={
+                index == currentPage - 1
+                  ? `${styles.pageNumber} ${styles.current}`
+                  : styles.pageNumber
+              }
+            >
+              {currentPage}
+            </span>
+            <span
+              className={
+                index == currentPage - 1
+                  ? `${styles.pageNumber} ${styles.current}`
+                  : styles.pageNumber
+              }
+            >
+              {currentPage + 1}
+            </span>
             <span>...</span>
           </div>
         )}
       </div>
       <button
+        disabled={currentPage == totalPages}
         onClick={() => {
           setCurrentPage((prevState) => prevState + 1);
           router.push({

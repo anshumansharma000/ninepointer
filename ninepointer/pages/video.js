@@ -25,6 +25,7 @@ const video = () => {
     console.log(router.query.page);
     console.log(query.split('&page'));
     if (router.query.page) {
+      setCurrentPage(router.query.page);
       if (!query) {
         setQuery((prevState) => prevState + `?page=${router.query.page}`);
       } else {
@@ -32,6 +33,11 @@ const video = () => {
           setQuery(
             (prevState) =>
               prevState.split('&page')[0] + `&page=${router.query.page}`
+          );
+        } else if (query.includes('?page')) {
+          setQuery(
+            (prevState) =>
+              prevState.split('?page')[0] + `?page=${router.query.page}`
           );
         } else {
           setQuery((prevState) => prevState + `&page=${router.query.page}`);

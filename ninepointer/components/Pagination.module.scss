@@ -1,7 +1,32 @@
+@import '../styles/colors';
 .container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 2rem;
   .pages {
     display: flex;
+    cursor: pointer;
+    .current {
+      background-color: $primary-color;
+      color: white;
+      border-radius: 50%;
+      padding: 0.3rem;
+    }
+    .pageNumber {
+      margin-right: 1rem;
+      padding: 0.3rem;
+    }
+  }
+  button {
+    background-color: $primary-blue;
+    padding: 0.5rem;
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+
+    &:disabled {
+      color: black;
+      background-color: $accent-grey;
+    }
   }
 }
