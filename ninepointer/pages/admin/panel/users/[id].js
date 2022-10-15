@@ -36,7 +36,7 @@ const id = () => {
         router.asPath.split('/')[router.asPath.split('/').length - 1]
       );
       const res = await axios.get(
-        `http://localhost:8000/api/v1/engineering/user/${
+        `https://ninepointer-staging.herokuapp.com/api/v1/engineering/user/${
           router.asPath.split('/')[router.asPath.split('/').length - 1]
         }`,
         {

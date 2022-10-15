@@ -75,7 +75,7 @@ const users = () => {
     }
     const fetchUsers = async () => {
       const res = await axios.get(
-        'http://localhost:8000/api/v1/engineering/user?limit=300',
+        'https://ninepointer-staging.herokuapp.com/api/v1/engineering/user?limit=300',
         {
           headers: {
             authorization: 'Bearer ' + localStorage.getItem('token'),

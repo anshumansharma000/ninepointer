@@ -11,11 +11,11 @@ const login = () => {
     e.preventDefault();
     const res = username.value.split('@')[1]
       ? await axios.post(
-          'http://localhost:8000/api/v1/engineering/user/login',
+          'https://ninepointer-staging.herokuapp.com/api/v1/engineering/user/login',
           { email: username.value, password: password.value }
         )
       : await axios.post(
-          'http://localhost:8000/api/v1/engineering/user/login',
+          'https://ninepointer-staging.herokuapp.com/api/v1/engineering/user/login',
           { username: username.value, password: password.value }
         );
     localStorage.setItem('token', res.data.token);

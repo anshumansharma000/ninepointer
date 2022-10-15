@@ -51,7 +51,7 @@ const videos = () => {
               onClick={async () => {
                 console.log(params.row.id);
                 console.log(
-                  `http://localhost:8000/api/v1/engineering/video/${params.row.id}`
+                  `https://ninepointer-staging.herokuapp.com/api/v1/engineering/video/${params.row.id}`
                 );
                 const res = await axios.delete(
                   `https://ninepointer-staging.herokuapp.com/api/v1/engineering/video/${params.row.id}`
