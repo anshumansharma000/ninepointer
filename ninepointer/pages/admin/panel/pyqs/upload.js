@@ -1,13 +1,22 @@
-import { Fragment, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import SideBar from '../../../../components/Admin/Panel/SideBar';
+import TopBar from '../../../../components/Admin/Panel/TopBar';
+import styles from './upload.module.scss';
+import { universities } from '../../../../data/universities';
+import { useRouter } from 'next/router';
+import Message from '../../../../components/Messge';
+import { DataGrid } from '@mui/x-data-grid';
 import axios from 'axios';
-import Meta from '../components/Layout/Meta';
-import { universities } from '../data/universities';
-import styles from '../styles/upload-pyq.module.scss';
-import Message from '../components/Message';
-import { storage } from '../utils/firebase';
+import Link from 'next/link';
+import { storage } from '../../../../utils/firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import Meta from '../../../../components/Layout/Meta';
+import SideBarPageContext from '../../../../context/SideBarPageContext';
+import { useContext } from 'react';
 
 const uploadpyq = () => {
+  const { sideBarPage, setSideBarPage } = useContext(SideBarPageContext);
+  const router = useRouter();
   const [formData, setFormData] = useState({
     // user_id: cookies.UserId,
     branch: '',
@@ -28,7 +37,12 @@ const uploadpyq = () => {
   const [uploadedFile, setUploadedFile] = useState({});
   const [fileLink, setFileLink] = useState('');
   // const [uploadPercent, setUploadPercent] = useState(0);
-
+  useEffect(() => {
+    if (!router.isReady) return;
+    if (sideBarPage !== 'pyqs') {
+      setSideBarPage('pyqs');
+    }
+  }, [router.isReady, router.pathname]);
   const firebaseUpload = async (file) => {
     if (!file) return;
     const storageRef = ref(
@@ -195,7 +209,7 @@ const uploadpyq = () => {
   };
 
   return (
-    <Fragment>
+    <>
       <Meta
         title='Upload PYQs - ninepointer'
         // children={
@@ -220,147 +234,157 @@ const uploadpyq = () => {
         // }
       />
       <div className={styles.container}>
-        <h1>Upload PYQs</h1>
-        <form onSubmit={handleSubmit}>
-          <section>
-            <label htmlFor='university'>University</label>
-            <select name='university' onChange={handleChange}>
-              <option value='' disabled selected>
-                Select your option
-              </option>
-              {universities.map((university, index) => {
-                return (
-                  <option key={index} value={university.name}>
-                    {university.name}
-                  </option>
-                );
-              })}
-            </select>
-            <label htmlFor='branch'>Branch</label>
-            <select name='branch' id='branch' onChange={handleChange}>
-              <option value='' disabled selected>
-                Select your option
-              </option>
-              <option value='Common'>Common</option>
-              <option value='Computer Science'>Computer Science</option>
-              <option value='Electrical'>Electrical</option>
-              <option value='Electronics'>Electronics</option>
-              <option value='Chemical'>Chemical</option>
-              <option value='Civil'>Civil</option>
-              <option value='Mechanical'>Mechanical</option>
-              <option value='Textile'>Textile</option>
-              <option value='Ceramic'>Ceramic</option>
-              <option value='Biomedical'>Biomedical</option>
-              <option value='Metallurgy'>Metallurgy</option>
-              <option value='Metallurgy'>Others</option>
-            </select>
-            <label htmlFor='semester'>Semester</label>
-            <select name='semester' id='semester' onChange={handleChange}>
-              <option value='' disabled selected>
-                Select your option
-              </option>
-              <option value='1'>1</option>
-              <option value='2'>2</option>
-              <option value='3'>3</option>
-              <option value='4'>4</option>
-              <option value='5'>5</option>
-              <option value='6'>6</option>
-              <option value='7'>7</option>
-              <option value='8'>8</option>
-            </select>
+        <TopBar />
+        <div className={styles.sections}>
+          <SideBar />
+          <div className={styles.pageContent}>
+            <div className={styles.containers}>
+              <h1>Upload Video </h1>
+              <form onSubmit={handleSubmit}>
+                <section>
+                  <label htmlFor='university'>University</label>
+                  <select name='university' onChange={handleChange}>
+                    <option value='' disabled selected>
+                      Select your option
+                    </option>
+                    {universities.map((university, index) => {
+                      return (
+                        <option key={index} value={university.name}>
+                          {university.name}
+                        </option>
+                      );
+                    })}
+                  </select>
+                  <label htmlFor='branch'>Branch</label>
+                  <select name='branch' id='branch' onChange={handleChange}>
+                    <option value='' disabled selected>
+                      Select your option
+                    </option>
+                    <option value='Common'>Common</option>
+                    <option value='Computer Science'>Computer Science</option>
+                    <option value='Electrical'>Electrical</option>
+                    <option value='Electronics'>Electronics</option>
+                    <option value='Chemical'>Chemical</option>
+                    <option value='Civil'>Civil</option>
+                    <option value='Mechanical'>Mechanical</option>
+                    <option value='Textile'>Textile</option>
+                    <option value='Ceramic'>Ceramic</option>
+                    <option value='Biomedical'>Biomedical</option>
+                    <option value='Metallurgy'>Metallurgy</option>
+                    <option value='Metallurgy'>Others</option>
+                  </select>
+                  <label htmlFor='semester'>Semester</label>
+                  <select name='semester' id='semester' onChange={handleChange}>
+                    <option value='' disabled selected>
+                      Select your option
+                    </option>
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                    <option value='5'>5</option>
+                    <option value='6'>6</option>
+                    <option value='7'>7</option>
+                    <option value='8'>8</option>
+                  </select>
 
-            <label htmlFor='year'>Year</label>
-            <input
-              type='year'
-              name='year'
-              id='year'
-              placeholder='Year'
-              required={true}
-              value={formData.year}
-              onChange={handleChange}
-            />
-            <label htmlFor='subject'>Subject</label>
-            <input
-              type='text'
-              name='subject'
-              id='subject'
-              placeholder='Subject'
-              required={true}
-              value={formData.subject}
-              onChange={handleChange}
-            />
-            <label htmlFor='type'>Question Type</label>
-            <select name='type' onChange={handleChange}>
-              <option value='' disabled selected>
-                Select your option
-              </option>
-              <option value='Regular'>Regular</option>
-              <option value='Back'>Back</option>
-              <option value='Both'>Both</option>
-              <option value='Others'>Others</option>
-            </select>
+                  <label htmlFor='year'>Year</label>
+                  <input
+                    type='year'
+                    name='year'
+                    id='year'
+                    placeholder='Year'
+                    required={true}
+                    value={formData.year}
+                    onChange={handleChange}
+                  />
+                  <label htmlFor='subject'>Subject</label>
+                  <input
+                    type='text'
+                    name='subject'
+                    id='subject'
+                    placeholder='Subject'
+                    required={true}
+                    value={formData.subject}
+                    onChange={handleChange}
+                  />
+                  <label htmlFor='type'>Question Type</label>
+                  <select name='type' onChange={handleChange}>
+                    <option value='' disabled selected>
+                      Select your option
+                    </option>
+                    <option value='Regular'>Regular</option>
+                    <option value='Back'>Back</option>
+                    <option value='Both'>Both</option>
+                    <option value='Others'>Others</option>
+                  </select>
 
-            {/* <input
+                  {/* <input
+                type='text'
+                name='university'
+                id='university'
+                placeholder='University'
+                required={true}
+                value={formData.university}
+                onChange={handleChange}
+              /> */}
+                  <label htmlFor='Author'>Author</label>
+                  <input
+                    type='text'
+                    name='author'
+                    id='author'
+                    placeholder='Author'
+                    required={false}
+                    value={formData.author}
+                    onChange={handleChange}
+                  />
+                  <label htmlFor='file'>Choose File</label>
+                  <input
+                    type='file'
+                    name='file'
+                    onChange={onChange}
+                    // value={formData.file}
+                  />
+                  {/* <label htmlFor='branch'>Branch</label> */}
+                  {/* <input
               type='text'
-              name='university'
-              id='university'
-              placeholder='University'
+              name='branch'
+              id='branch'
+              placeholder='Branch'
               required={true}
-              value={formData.university}
+              value={formData.branch}
               onChange={handleChange}
             /> */}
-            <label htmlFor='Author'>Author</label>
-            <input
-              type='text'
-              name='author'
-              id='author'
-              placeholder='Author'
-              required={false}
-              value={formData.author}
-              onChange={handleChange}
-            />
-            <label htmlFor='file'>Choose File</label>
-            <input
-              type='file'
-              name='file'
-              onChange={onChange}
-              // value={formData.file}
-            />
-            {/* <label htmlFor='branch'>Branch</label> */}
-            {/* <input
-            type='text'
-            name='branch'
-            id='branch'
-            placeholder='Branch'
-            required={true}
-            value={formData.branch}
-            onChange={handleChange}
-          /> */}
-            {/* {uploadPercent != 0 && <Progress percentage={uploadPercent} />} */}
-            <label htmlFor='url'>Add external file link</label>
-            <input
-              type='url'
-              name='url'
-              id='url'
-              placeholder='Add link to file'
-              value={formData.url}
-              onChange={handleChange}
-            />
-            <label htmlFor='solutionLink'>Add solution link</label>
-            <input
-              type='solutionLink'
-              name='solutionLink'
-              id='solutionLink'
-              placeholder='Add solution Link'
-              value={formData.solutionLink}
-              onChange={handleChange}
-            />
-            <input type='submit' />
-            {message ? <Message msg={message} setMessage={setMessage} /> : null}
-          </section>
-        </form>
+                  {/* {uploadPercent != 0 && <Progress percentage={uploadPercent} />} */}
+                  <label htmlFor='url'>Add external file link</label>
+                  <input
+                    type='url'
+                    name='url'
+                    id='url'
+                    placeholder='Add link to file'
+                    value={formData.url}
+                    onChange={handleChange}
+                  />
+                  <label htmlFor='solutionLink'>Add solution link</label>
+                  <input
+                    type='solutionLink'
+                    name='solutionLink'
+                    id='solutionLink'
+                    placeholder='Add solution Link'
+                    value={formData.solutionLink}
+                    onChange={handleChange}
+                  />
+                  <input type='submit' />
+                  {message ? (
+                    <Message msg={message} setMessage={setMessage} />
+                  ) : null}
+                </section>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-    </Fragment>
+    </>
   );
 };
 

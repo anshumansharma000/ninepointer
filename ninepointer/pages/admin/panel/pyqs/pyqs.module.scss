@@ -1,0 +1,31 @@
+@import '../../../../styles/colors';
+.container {
+  margin: 0 -4rem;
+  .sections {
+    display: flex;
+    .pageContent {
+      flex: 4;
+      section {
+        input,
+        select,
+        textArea {
+          padding: 0.5rem 0.5rem;
+          border-radius: 0.4rem;
+          border: none;
+          width: 60%;
+          background-color: $highlight-grey;
+          outline: none;
+        }
+        input[type='submit'] {
+          margin-top: 1rem;
+          margin-bottom: 2rem;
+          background-color: $primary-blue;
+          color: white;
+        }
+        label {
+          display: block;
+        }
+      }
+    }
+  }
+}

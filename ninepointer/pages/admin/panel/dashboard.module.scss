@@ -1,0 +1,17 @@
+.container {
+  margin: 0 -4rem;
+  .sections {
+    display: flex;
+    .pageContent {
+      flex: 4;
+      .buttons {
+        margin-top: 4rem;
+        margin-right: 8rem;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+      }
+    }
+  }
+}

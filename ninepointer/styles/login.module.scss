@@ -1,0 +1,26 @@
+@import './colors';
+.container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  input {
+    margin: auto;
+    display: block;
+    padding: 0.8rem;
+    border: none;
+    outline: none;
+    border-radius: 0.4rem;
+    background-color: $highlight-grey;
+    margin-bottom: 1rem;
+  }
+  button {
+    background-color: $primary-blue;
+    color: white;
+    padding: 0.8rem;
+    border-radius: 0.4rem;
+    border: none;
+    width: 100%;
+  }
+}
