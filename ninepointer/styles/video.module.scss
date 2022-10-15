@@ -28,3 +28,14 @@
     display: block;
   }
 }
+
+@media (max-width: 600px) {
+  .container {
+    width: auto;
+    .filters {
+      display: none;
+    }
+    .videos {
+    }
+  }
+}
