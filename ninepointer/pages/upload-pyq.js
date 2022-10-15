@@ -3,7 +3,7 @@ import axios from 'axios';
 import Meta from '../components/Layout/Meta';
 import { universities } from '../data/universities';
 import styles from '../styles/upload-pyq.module.scss';
-import Message from '../components/Message';
+import Message from '../components/Messge';
 import { storage } from '../utils/firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
