@@ -8,21 +8,27 @@ import styles from '../styles/login.module.scss';
 const login = () => {
   const router = useRouter();
   const onSubmit = async (e) => {
+    console.log(username.value);
+    console.log(password.value);
     e.preventDefault();
-    const res = username.value.split('@')[1]
-      ? await axios.post(
-          'https://ninepointer-staging.herokuapp.com/api/v1/engineering/user/login',
-          { email: username.value, password: password.value }
-        )
-      : await axios.post(
-          'https://ninepointer-staging.herokuapp.com/api/v1/engineering/user/login',
-          { username: username.value, password: password.value }
-        );
-    localStorage.setItem('token', res.data.token);
-    localStorage.setItem('role', res.data.data.role);
-    console.log(res.data);
-    console.log(res.data.data.role);
-    router.back();
+    try {
+      const res = username.value.split('@')[1]
+        ? await axios.post(
+            'http://ninepointer-staging.herokuapp.com/api/v1/engineering/user/login',
+            { email: username.value, password: password.value }
+          )
+        : await axios.post(
+            'https://ninepointer-staging.herokuapp.com/api/v1/engineering/user/login',
+            { username: username.value, password: password.value }
+          );
+      localStorage.setItem('token', res.data.token);
+      localStorage.setItem('role', res.data.data.role);
+      console.log(res.data);
+      console.log(res.data.data.role);
+      router.back();
+    } catch (err) {
+      console.log(err.response.data);
+    }
   };
   return (
     <div className={styles.container}>
