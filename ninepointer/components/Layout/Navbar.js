@@ -69,7 +69,7 @@ export const Navbar = () => {
           </li>
           <li onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
             <a
-              href='https://www.youtube.com/channel/UCgslF4zuDhDyttD9P3ZOHbg/playlists'
+              href='/video'
               rel='noopener noreferer'
               target='_blank'
             >
@@ -103,7 +103,7 @@ export const Navbar = () => {
               <Link href='/create'>Create with us</Link>
             </li>
             <li>
-              <Link href='https://www.youtube.com/channel/UCgslF4zuDhDyttD9P3ZOHbg/playlists'>
+              <Link href='/video'>
                 Browse Content
               </Link>
             </li>
